@@ -1,16 +1,16 @@
 # User Feedback Loop & Product Iterations
 
-During the **Full Moon phase (Level 5)**, we acquired 50 early adopters to test the AssetBridge MVP on the Preprod network. We gathered structured feedback using our newly integrated feedback module to refine the product.
+During the **Supermoon phase (Level 6)**, we acquired 70 early adopters to test the AssetBridge MVP on the Preprod network. We gathered structured feedback using our newly integrated feedback module to refine the product.
 
 ## 1. Methodology
 
-*   **Target Audience:** 50 active Web3 developers and privacy advocates.
+*   **Target Audience:** 70 active Web3 developers and privacy advocates.
 *   **Collection Method:** In-app feedback form (`Feedback.jsx`) embedded directly below the bridge interface.
 *   **Data Types Collected:** Quantitative (Success Rates) and Qualitative (UI friction, feature requests).
 
 ## 2. Structured Feedback Summary
 
-We categorized the feedback from our 50 users into three main areas:
+We categorized the feedback from our 70 users into three main areas:
 
 | Category | User Feedback | Severity / Frequency |
 | :--- | :--- | :--- |
@@ -33,4 +33,4 @@ Based on the feedback, we prioritized the following updates using an Effort vs. 
 
 ## 4. Conclusion
 
-Acquiring 50 real Preprod users fundamentally changed our perspective. By stopping building in private and starting to listen, we were able to quickly iterate on the core bridging experience, making it far more intuitive and reassuring for the end-user while maintaining absolute privacy.
+Acquiring 70 real Preprod users fundamentally changed our perspective. By stopping building in private and starting to listen, we were able to quickly iterate on the core bridging experience, making it far more intuitive and reassuring for the end-user while maintaining absolute privacy.
