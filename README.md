@@ -1,6 +1,6 @@
 # AssetBridge 🌔
 
-[![CI/CD Pipeline](https://github.com/AssetBridge/assetbridge-mvp/actions/workflows/ci.yml/badge.svg)](https://github.com/AssetBridge/assetbridge-mvp/actions/workflows/ci.yml)
+[![CI/CD Pipeline](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml/badge.svg)](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml)
 
 **Level 4 - Waxing Gibbous Submission**
 
@@ -19,8 +19,8 @@ To run this project locally, follow these steps:
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/AssetBridge/assetbridge-mvp.git
-    cd assetbridge-mvp
+    git clone https://github.com/thanchanb/AssetBridge.git
+    cd AssetBridge
     ```
 2.  Install dependencies:
     ```bash
