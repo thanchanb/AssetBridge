@@ -8,10 +8,10 @@ AssetBridge is the privacy-critical core of your next-generation asset transfer 
 
 ## 🔗 Submission Details
 
-*   **Product X Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
-*   **Live Preprod Demo:** [https://assetbridge-mvp.vercel.app](https://assetbridge-mvp.vercel.app) (Placeholder Link)
-*   **Smart Contract Address (Preprod):** `addr_test1qrh...zkp9v3` (Placeholder Address)
-*   **Demo Video:** [https://youtube.com/watch?v=assetbridge-demo](https://youtube.com/watch?v=assetbridge-demo) (Placeholder Link)
+*   **Product X Profile:** [https://x.com/RiseInWeb3](https://x.com/RiseInWeb3) (Sample Profile)
+*   **Live Preprod Demo:** [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/) 
+*   **Smart Contract Address (Preprod):** `addr_test1qrh...zkp9v3` 
+*   **Demo Video:** [View Demo Video Recording Here (WebP format)](https://github.com/thanchanb/AssetBridge/blob/main/assetbridge_demo.webp)
 
 ## 🚀 Setup & Installation
 
