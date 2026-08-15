@@ -1,12 +1,22 @@
 import React from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Bridge from './components/Bridge';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="app-container">
       <div className="bg-glow"></div>
-      <div className="container">
-        <h1>AssetBridge</h1>
-      </div>
+      
+      <Header />
+      
+      <main>
+        <Hero />
+        <Bridge />
+      </main>
+      
+      <Footer />
     </div>
   );
 }
