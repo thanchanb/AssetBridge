@@ -2,7 +2,7 @@
 
 [![CI/CD Pipeline](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml/badge.svg)](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml)
 
-**Level 4 - Waxing Gibbous Submission**
+**Level 5 - Full Moon Submission**
 
 AssetBridge is the privacy-critical core of your next-generation asset transfer protocol. Utilizing cutting-edge Zero-Knowledge Proofs, it enables users to seamlessly bridge assets across chains without exposing the sender, receiver, or amount transferred.
 
@@ -11,7 +11,9 @@ AssetBridge is the privacy-critical core of your next-generation asset transfer 
 *   **Product X Profile:** [https://x.com/RiseInWeb3](https://x.com/RiseInWeb3) (Sample Profile)
 *   **Live Preprod Demo:** [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/) 
 *   **Smart Contract Address (Preprod):** `addr_test1qrh...zkp9v3` 
-*   **Demo Video:** [View Demo Video Recording Here (WebP format)](https://github.com/thanchanb/AssetBridge/blob/main/assetbridge_demo.webp)
+*   **Demo Video:** [View Demo Video Recording Here (WebP format)](https://github.com/thanchanb/AssetBridge/blob/main/assetbridge_demo_v2.webp)
+*   **50 Preprod Users:** [View Verifiable Addresses (USERS.md)](./USERS.md)
+*   **Feedback Loop Docs:** [View Feedback Report & Iterations (FEEDBACK_LOOP.md)](./FEEDBACK_LOOP.md)
 
 ## 🚀 Setup & Installation
 
