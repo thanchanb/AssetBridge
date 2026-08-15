@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Twitter, MessageSquare } from 'lucide-react';
+import { Globe, MessageCircle, MessageSquare } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -28,10 +28,10 @@ const Footer = () => {
 
         <div className="footer-social">
           <a href="https://x.com/AssetBridgeZK" target="_blank" rel="noreferrer" className="social-link">
-            <Twitter size={20} />
+            <MessageCircle size={20} />
           </a>
           <a href="https://github.com/AssetBridge" target="_blank" rel="noreferrer" className="social-link">
-            <Github size={20} />
+            <Globe size={20} />
           </a>
           <a href="#" className="social-link">
             <MessageSquare size={20} />
