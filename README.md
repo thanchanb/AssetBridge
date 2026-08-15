@@ -1,16 +1,46 @@
-# React + Vite
+# AssetBridge 🌔
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+[![CI/CD Pipeline](https://github.com/AssetBridge/assetbridge-mvp/actions/workflows/ci.yml/badge.svg)](https://github.com/AssetBridge/assetbridge-mvp/actions/workflows/ci.yml)
 
-Currently, two official plugins are available:
+**Level 4 - Waxing Gibbous Submission**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+AssetBridge is the privacy-critical core of your next-generation asset transfer protocol. Utilizing cutting-edge Zero-Knowledge Proofs, it enables users to seamlessly bridge assets across chains without exposing the sender, receiver, or amount transferred.
 
-## React Compiler
+## 🔗 Submission Details
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Product X Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
+*   **Live Preprod Demo:** [https://assetbridge-mvp.vercel.app](https://assetbridge-mvp.vercel.app) (Placeholder Link)
+*   **Smart Contract Address (Preprod):** `addr_test1qrh...zkp9v3` (Placeholder Address)
+*   **Demo Video:** [https://youtube.com/watch?v=assetbridge-demo](https://youtube.com/watch?v=assetbridge-demo) (Placeholder Link)
 
-## Expanding the Oxlint configuration
+## 🚀 Setup & Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+To run this project locally, follow these steps:
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/AssetBridge/assetbridge-mvp.git
+    cd assetbridge-mvp
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+## 📖 Usage
+
+Please refer to the [USAGE.md](./USAGE.md) for detailed instructions on how to use the bridge interface.
+
+## 🛠 Features
+
+*   **Privacy-First:** ZK-SNARKs implementation for absolute privacy.
+*   **Stunning UI:** Premium glassmorphism design with responsive micro-animations.
+*   **CI/CD Integrated:** Automated testing and build pipelines via GitHub Actions.
+
+## 🤝 Contributing
+
+This project is built for the Waxing Gibbous submission. We welcome community feedback and contributions as we move towards the full moon!
