@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Bridge from './components/Bridge';
+import Feedback from './components/Feedback';
 import Footer from './components/Footer';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <main>
         <Hero />
         <Bridge />
+        <Feedback />
       </main>
       
       <Footer />
