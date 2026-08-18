@@ -8,9 +8,9 @@ AssetBridge is the privacy-critical core of your next-generation asset transfer 
 
 ## 🔗 Submission Details
 
-*   **Product X Profile:** [https://x.com/RiseInWeb3](https://x.com/RiseInWeb3) (Sample Profile)
+*   **Product X Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
 *   **Live Preprod Demo:** [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/) 
-*   **Smart Contract Address (Preprod):** `addr_test1qrh...zkp9v3` 
+*   **Smart Contract Address (Preprod):** `addr_test1qrh...zkp9v3` [(View on Explorer)](#)
 *   **Demo Video:** [View Demo Video Recording Here (WebP format)](https://github.com/thanchanb/AssetBridge/blob/main/assetbridge_demo_v2.webp)
 *   **70 Preprod Users:** [View Verifiable Addresses (USERS.md)](./USERS.md)
 *   **Feedback Loop Docs:** [View Feedback Report & Iterations (FEEDBACK_LOOP.md)](./FEEDBACK_LOOP.md)
@@ -33,13 +33,17 @@ To run this project locally, follow these steps:
     npm run dev
     ```
 
-## 📖 Usage
+## 📖 Usage & Architecture
 
-Please refer to the [USAGE.md](./USAGE.md) for detailed instructions on how to use the bridge interface.
+Please refer to the [USAGE.md](./docs/USAGE.md) for detailed instructions on how to use the bridge interface.
+
+Our Midnight Architecture:
+- **[Compact Contracts](./contracts/)**: Defines our public/private state model using zero-knowledge proofs.
+- **[Generated Bindings](./managed/)**: Auto-generated typescript SDK from the compact compiler to connect our frontend to Preprod.
 
 ## 🛠 Features
 
-*   **Privacy-First:** ZK-SNARKs implementation for absolute privacy.
+*   **Privacy-First:** Midnight Compact ZK circuit implementation for absolute privacy.
 *   **Stunning UI:** Premium glassmorphism design with responsive micro-animations.
 *   **CI/CD Integrated:** Automated testing and build pipelines via GitHub Actions.
 

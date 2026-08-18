@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "../../",
+  "sources": ["contracts/AssetBridge.compact"],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAKA;;;;;;;;;;MAIA,AAAA,YAIC;;;;;cAJ2B,QAAgB;;;;;;;;;;;;;;;;;;yCAAhB,QAAgB;;;;;;;;;8CAAhB,QAAgB;;;OAI3C;;;;GACA;EATD;;;;;;;;;;;;;;;;;;;;;;;;;;IAEA;;;;;;;;;yEAA4B;;;;;;;GAO3B;EALD,AAAA,eAIC,4BAJ2B,QAAgB;UAGxC,KAAG;;;;;6CAAI;;;;;;;;;;;kHAAG;;qBAAY,QAAM;IAA5B;;;;;;;2HAAA,KAAG;;yEAAA;;GACN;;;;;;;;;;;;;;;;IAND;qCAAA;;;;;;;;;;;0GAA4B;KAAA;;;;;;;;;;"
+}

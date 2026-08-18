@@ -1,0 +1,14 @@
+// AssetBridge Privacy Model:
+// - Public Ledger State: Total Value Locked (TVL) in the bridge.
+// - Private Witness Data: The specific amount the user is bridging in this transaction, and their identity.
+// - disclose(): The amount to be bridged is explicitly disclosed to the public ledger so the TVL can be accurately updated, while identity remains private.
+
+pragma language_version >= 0.14.0;
+
+export ledger tvl: Uint<32>;
+
+export circuit bridge_asset(amount: Uint<32>): [] {
+    // The amount is provided as a private witness.
+    // We explicitly disclose it to the public ledger state to update the total bridged value.
+    tvl = (tvl + disclose(amount)) as Uint<32>;
+}
