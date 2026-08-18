@@ -10,7 +10,7 @@ AssetBridge is the privacy-critical core of your next-generation asset transfer 
 
 *   **Product X Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
 *   **Live Preprod Demo:** [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/) 
-*   **Smart Contract Address (Preprod):** `addr_test1qrh...zkp9v3` [(View on Explorer)](#)
+*   **Smart Contract Address (Preprod):** `addr_test1qrhyscfn7307k3ud0uynxrytzlqfzw24z4k3z5e972n833d8a6l62kx4733eulx7940h36vskvztuzcldt5y9h69zkp9v3` [(View on Explorer)](#)
 *   **Demo Video:** [View Demo Video Recording Here (WebP format)](https://github.com/thanchanb/AssetBridge/blob/main/assetbridge_demo_v2.webp)
 *   **70 Preprod Users:** [View Verifiable Addresses (USERS.md)](./USERS.md)
 *   **Feedback Loop Docs:** [View Feedback Report & Iterations (FEEDBACK_LOOP.md)](./FEEDBACK_LOOP.md)
