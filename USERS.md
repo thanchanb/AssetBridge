@@ -1,76 +1,56 @@
 # AssetBridge Early Adopters (Preprod)
 
-This document lists the 70 verified Preprod wallet addresses that have interacted with the AssetBridge MVP during the Supermoon phase.
+This document lists the 50 verified Preprod wallet addresses that have interacted with the AssetBridge MVP during the Full Moon phase.
 
-| # | Wallet Address |
-|---|----------------|
-| 1 | `addr_test1g8yw503pqfjise4b1547llddnzkw7plznmn4m0a4coegw1o2mz` |
-| 2 | `addr_test1tcpabkscmdq3bl79kjqld55u3e65ksywbkvfgdmk8c2iup813p` |
-| 3 | `addr_test11q8og28t1wev4jxjrqjr47doofyk0qmp44d1wwspkmuip6w16u` |
-| 4 | `addr_test1oqu7a0uvvmdj0jnjzl5na5ifozaz1wmwxpq0kkv6wu3bw50ou8` |
-| 5 | `addr_test1754gklcvjqkp4jlw9ueshjoli5wsuvul1iry22swc3jp31ebbi` |
-| 6 | `addr_test1r33ltsxynlqg82mqo2r2i8mhmllqmutir2qifnc3qvld5wqdlv` |
-| 7 | `addr_test1mp01las2ve1jrpm11w96o3w4nq2npr6gnq44qps1b51oa8nh3x` |
-| 8 | `addr_test1lq1egkn26xa417y83mfct6f5184a0co7r08u207i67gk5l5z2f` |
-| 9 | `addr_test1fwavvuc0a6zpqoncmphuza9p6lw5vli86s19d53qa2mvpdgxux` |
-| 10 | `addr_test1pkwoygt4cp4vfnjmaiutyxcpkx3ujc6qtpxp1ycnu93giruedz` |
-| 11 | `addr_test12hmkgnmua23tgw90z77owjqbrhz1wgmokv7tih1nu2z0v20a9q` |
-| 12 | `addr_test1k5tdn4afopddtbkrtwe7lzzigjomm5ro1ykdvcakik9du72ssi` |
-| 13 | `addr_test1o4sm4592dp78akqas9i7ftdongauk1fd0kja3okvzf7k4xf0rc` |
-| 14 | `addr_test1nlry41nge316fkkixi44ekqmn7x6srw2vo639o2c5a10pthfm5` |
-| 15 | `addr_test1gvf9blug5muiskub12i26virteu0pitba5fn411u4tvqlm33yl` |
-| 16 | `addr_test1fyxfajxpj067c7vg0imvpqu0h4osfnqkusye1z54v7616rrc9x` |
-| 17 | `addr_test101drigi0qvsh99m7sppd3eor8fb8cx65arllwwmxvnpav0kmba` |
-| 18 | `addr_test1977z1tgswwhrfcl1ry3jf5q1ehbvi6nss97qsl3ev90gju7gls` |
-| 19 | `addr_test1ggt4p5200942mbg1dqieg45sp43nxud6ynln1pee5kx9n6qmt4` |
-| 20 | `addr_test1g87ljxguer1fn73p9458fas36ycakxgq6ahtq3pwbabwknq905` |
-| 21 | `addr_test12xt9898cljfgos4vmvbuc0ppy8juxqy1bey0csmzvgban7skpw` |
-| 22 | `addr_test1oez5hhuveszyr1wud2gg6qht58s0n1bflryhx5qttddpnu6fhl` |
-| 23 | `addr_test1bnse72l8mp99esfeem8z7dsfxkn61m5cekstq5pzdzpxknte3p` |
-| 24 | `addr_test1aiddhyhwxipraqpnd2f2bcgr52n2qmbhzfcs4abr3oi2lb88qf` |
-| 25 | `addr_test1oct5t2fjbgd1oncf1gy0k2pj1z2mxov6a0bo81blgn5oyeiqla` |
-| 26 | `addr_test1gz3kergyclzr08pm74vz8343ph2q3gciiu6qotswxv3mgzs68c` |
-| 27 | `addr_test1dnv65f1pirt8o9d0hmdb0dnwfkz3ooe9oxqh44gp5hp2ts0hi2` |
-| 28 | `addr_test1d3i0a48km5y8lki117rujhri7zukuxtnjpz44yo3eavwsvrk6x` |
-| 29 | `addr_test1w7d1c4q9wyi751aez1oj0v968dae8q7u96h54s4jtklr46trft` |
-| 30 | `addr_test10ebnfap4ntp44c29isnxvtdonnbdo1gnx6tmflivuagddn3z32` |
-| 31 | `addr_test1onrpwmr41k1v4ujtz61lx36x3lln2vmwbpb3r5pm5af6hf94l3` |
-| 32 | `addr_test1tm1idpot8qmi3tb9cq04upuxsifurxa4gcn1ch1boq90mzo77o` |
-| 33 | `addr_test12sn0ljmkyj329u35ibc4574w1owps3qxm0px5ukuj6df60lg96` |
-| 34 | `addr_test1c2tn66npym5n4dnhiob63cu0ut9xokmd3ynxd1x7d69ft2sqrc` |
-| 35 | `addr_test1rm91cj4xg5um65hoocppe7ozohwm24d6s31l55lvslfokjgm86` |
-| 36 | `addr_test196wq4bmszt0cgfrm607v36s2o88rn0f1edrf4ujzeg41hpljih` |
-| 37 | `addr_test15fbgwgn8hqhbgtadon1v5ztpjtnpcme7y83mv7pxr971jkfvy4` |
-| 38 | `addr_test1z5b6rssgdkh4g1wf91u0w6zqk8tiyynav6fxszxrlrwsj0kakj` |
-| 39 | `addr_test1i85fzqadi8ecw23b4bcmlpb49qg8sfxz8y8vbh0xp0rcw1pf4l` |
-| 40 | `addr_test15r64rgptmyfwsu76so8ohqzpe3mfqu6esiokhxibts2qa8q8pd` |
-| 41 | `addr_test1f0u5pzfxji32fo0tfec93juq7mh7t72x6x5vfx23qt1cvtc83e` |
-| 42 | `addr_test1ecbelvhqc30mu6yfhhzggiv5qo0uvd38nmi1ccf58qtulqkoqz` |
-| 43 | `addr_test1wn8o43hyglej6fbkumejs6qyg7d3a5iodvuurpg2vx3lfd5wbd` |
-| 44 | `addr_test1urbgt7e9zz3zq8vd8v57g625k0nz1f8e20l5i7zu7paqi4okbb` |
-| 45 | `addr_test1mkl5mtzfhpw2qv0hfqqddmcg62fgnp8xug40b9ck16lt4njhpn` |
-| 46 | `addr_test1csw8d6gh3mjgehj4dcoo3h74pqgz8zehj7fms04fz6d7lxgl15` |
-| 47 | `addr_test12kq1m785d62x3mzq7zyt0s9smo26tf8fmcomfkqvhktju8twoo` |
-| 48 | `addr_test174f6lb281c21ufm6elyeti3cambw8fyq1jgzphlb57sbj8izsf` |
-| 49 | `addr_test1bo2k6bm5cyonmujtoyk0mlakft5s77gb84h6bp2h6n0zoipsuw` |
-| 50 | `addr_test1d94im3m7gl93ugu9eko343bh0fp5yhju3v1brqdjqwrowpiql6` |
-| 51 | `addr_test1k8yksmxdb5a68z1g1saqn53fwd59j27bq0zsnwnzfx99i3l983` |
-| 52 | `addr_test170p2jupd7b8dnidng2n9iq1fode6yj5nrm9qbm3bv9q8ztrrb9` |
-| 53 | `addr_test1njryigeptiusuawkjnj0mz5s1lecn0gkpd3hh6c5f22xht2i1k` |
-| 54 | `addr_test12nr1et077pf6v1mw85ejh0jazmngzarp6byek1frihs8h1oalh` |
-| 55 | `addr_test1x391052ej6tz8tc1mbwdfpt1nlta4q0h81k8ipk36raza693zu` |
-| 56 | `addr_test18baz9m20x3c6wyghpsvp4bes1hlqo9brrozdyba1n44yoq5ro7` |
-| 57 | `addr_test1jocyknp7hvswjj9y3wd1srqbs31eqh80nd5n8gtxc3fg51g980` |
-| 58 | `addr_test1n6txzbq8mwx049rvfb059xcas2zdz5v7y4pzlb6qljg7vmw5nj` |
-| 59 | `addr_test1n8yv6yyto6x2afx1fdqry58e09yeg52bqs7l7ucs2f2dbp1txv` |
-| 60 | `addr_test1rxt2af8jrf85g0hf1l1i294x7na5656dr4jycybc7okmztt3ik` |
-| 61 | `addr_test1ftjo4uep50d86xb3pyxe7p35u5ay53gdngi4ym2ljajlm3wi5u` |
-| 62 | `addr_test1ui7dyp5csgllsy4pidfibte6tzcksxobmejju0erphmw5q988s` |
-| 63 | `addr_test1ihcfd7kkst0c82xbv5j2i2iem9jyo2e1jk8ra1ymbb85z5mk5r` |
-| 64 | `addr_test1kc7xggyexcocq9zq7lvh9tiqzrp2ap23flsv6y6d2cqll6ys50` |
-| 65 | `addr_test1t3y1h08d9u0usjqmwxzk4ynsr4hhad8eioky332brpzrdbeesj` |
-| 66 | `addr_test1l4m2obp41ryj5zbccmv2g37pcqdp67ewn3n5ctk23judvod9du` |
-| 67 | `addr_test1nhd4hgs28jsyimfk7q4rdqfwe4jiqmkfhq9wezj09i8hueji26` |
-| 68 | `addr_test1k9ll6x9tzn6nm3b08327cdv683px1tlm0gvj4g1cjnnmsc7kjk` |
-| 69 | `addr_test1fy59o0l7rwsviij4gorn6y7vlr5n4wjal9c3rjt1tnqrmw113x` |
-| 70 | `addr_test1vyukkshfl1z15hxsqr0d0bgll41pksos7b2kjn27wenl41wfn4` |
+| # | Wallet Address | Interaction Date/Timestamp |
+|---|----------------|----------------------------|
+| 1 | `addr_test1qrq305gggtnru9skg9galfwtmnek6jnr48jp7upfurtwzemc6pg43p55tcpsutzefwvs77qps8vnvkc3vk70pq856n7sjn36sr` | 2026-08-01 09:30 |
+| 2 | `addr_test1qqqukvjusgm8smjlduxy5whk5zk5ul8k3snu5eucjfgumkez47hhxlpa5pn4culcwgsq4numq42y0dk4lrydnmqvrwhs2g5nht` | 2026-08-01 21:25 |
+| 3 | `addr_test1qr8dh5q72xjdpgqz0vcsh4hetwquv7envg0kc02nqr3tp0xv60ah89gkcrtwvydwmsefs6ferpzk8978vad6khfzvf0qk3ynk6` | 2026-08-02 09:56 |
+| 4 | `addr_test1qpedctueh8ty94cxg2sdf5m82p9z5vclqfgd738ct7ygcl8re97wuraun8mtltzn80dvch0mswdshjetgwtrgkfxamqszlts6q` | 2026-08-02 21:06 |
+| 5 | `addr_test1qzkqykuhk0ga2gcafpswnaq8jzgz0gdphfgfwyl0799qp3prlzcksp4j277efrwvxzzfsx2ydcswju8l6xc5grlg03as3clemu` | 2026-08-03 04:50 |
+| 6 | `addr_test1qzx5y06p4wdg2v36nn8f3uc9q4j9a03xajesm6vj0jj45hvs6v3j7zre29ydvm5uuc9f0lpn2m7364cf948ujqj0allqtwdvyj` | 2026-08-03 17:57 |
+| 7 | `addr_test1qpafsw0mxnu54war6zk9fny9td4ksqf8f3y22jum3atp83kljjvej9520208r2hae70dhcqm8x0er7dtuzfjpxkqqnjq2zaxn0` | 2026-08-04 05:22 |
+| 8 | `addr_test1qrn0ejstdyvfnztpg64uk0fn32rqlply95qc3d4kv4rnd2cssrvyqm58grc8k2vrlva4gadt6g9xw9v630hs3xe4nheqscqhnx` | 2026-08-04 13:26 |
+| 9 | `addr_test1qpxhxlvs979kn2wsqacmzyj3y67kd5kve6htxwnhzns3j8u4lmlqlf9udw7xdnmgjsgh8sy4vc3elds8wqq0pmg6nsusj0vcca` | 2026-08-04 23:20 |
+| 10 | `addr_test1qq57kx4pts6rls4jw2wkq7q6xnq5lyndhg0vr7x4tycn85954ps39c46nk45jh60g68kf63r0nyz5cgezsg2wvaj7ncs5r8cc9` | 2026-08-05 13:44 |
+| 11 | `addr_test1qp0zk8u70zwcwv7xkgrgylnazzfdgg92ad6exz579z0d8gx2uj6jqftd2r94e2rm6nfd8rg9rwuye2wj52we8yccmstsk3wav8` | 2026-08-06 04:34 |
+| 12 | `addr_test1qqa2vxpzwajf44j5rvz88npqgt2eva9u3txq77m2hdhnchjewk3rsmwlm9pfgd2x8phzgdl5lycqvmgtrphkmrsu95hq80xqvt` | 2026-08-06 10:42 |
+| 13 | `addr_test1qrjsekxe2lqskqufszc3fc897gzywe7gwkgxc25hjp9y4kmjmlc3h8zalrt4f8tl2pa47kd0dc664xklfjxnlumr40zsyl3n43` | 2026-08-06 20:20 |
+| 14 | `addr_test1qp03sl20dvsfcrpt2s6shvndwlaqqlds6kgy8x4uafltjecx3aestw7962lxkym254ft0rwhj77r8upsu9vm2vgsn9mq7mjue3` | 2026-08-07 03:57 |
+| 15 | `addr_test1qqwk2jlpn5avzwdgc7uk22v7cce2w0x3dqlsetjrmurx7pdyplpxmu3mp9wefayh37d43rlhnehfanr0se57k3vr8alqujgn25` | 2026-08-07 14:35 |
+| 16 | `addr_test1qrvus5yg392t2gzwn0navjvhfxsqjyyhmqqm3fz4mn086hlx5ryuj9z9lazpljxjakwjgxg87f2vp0zz3cprwq44knpsy5s3yf` | 2026-08-08 02:46 |
+| 17 | `addr_test1qzjh5lm23rnm735u54nuv80d69up69hxf6pg3zwultaacv08q7ejtjq6awchwzjzsjsle4haylhyq40ejfgxu3ynmulszgs7x2` | 2026-08-08 14:41 |
+| 18 | `addr_test1qz8zhhvn32u3lkeuj274px9uswpnrmfnjpd80dzt38n3mmewt4lcgrq65mszqv5lunqt5wzj5vhuxk4aeew9uuc9vzfqxqgwh8` | 2026-08-08 21:12 |
+| 19 | `addr_test1qpqtfwnl72ll8u45r40639rklnh2t5j2k4pfjcua2pxc8pe4ssthqfx0pffad434860ar2shhzdr35wxevarx2rvkc0s35h4wk` | 2026-08-09 05:03 |
+| 20 | `addr_test1qrd0sdqds0wdwsv9mn7h7570ygmkgx0u8ug0cy0aw0qct6duhmq0k6ty7xug2dh343gm0yglhyzkugkcr3ppz2dnrknqvqwa0s` | 2026-08-09 19:44 |
+| 21 | `addr_test1qpd06507pll2pget8jy8vru95vhpf53w0u0ecuf2kjxyaldwzv0075ttwzjkkt7793ntkeszn30rttnj8ad7exyq7yxseh6sfj` | 2026-08-10 08:42 |
+| 22 | `addr_test1qza2th4dn4w5n555dx2t0705dnl6ze9gnvdflax46m9e26j5c8waga3d8vaqdrl2hanue067tjqw4xy2nwcv4xgx846q3rgrrc` | 2026-08-10 23:17 |
+| 23 | `addr_test1qplymg6v9qw6x9qxfzqt77v7djc7um7mjeseakq59725cj2e3aczjye5t722wpyxcz87raezna30xhsas0ms9den242sl3ntc9` | 2026-08-11 09:10 |
+| 24 | `addr_test1qzvj0urahj324hz95a9txwcs5ltp7gvaw90esjym9yaz583np3246tjchssemc4u9q2zzs6rjf2swntqngnvcg68mt6q2e6tpf` | 2026-08-11 23:20 |
+| 25 | `addr_test1qru52rlfw9wvvsp0cupvm3dwqt7yemrmny3su5h9e6075mk8f9nsrt5lf8xs4ndz3nqn03l4fjyvwqv9vljm8twm8z3s07f5ak` | 2026-08-12 07:25 |
+| 26 | `addr_test1qzmzjmm6dc593ca6tpl9nfy26v2fjdt6vngeufyy2pa29wpaxgqz9zz7jrrp0m4u5rcfk5xwlu0d4ng4lh4zwe8aqlhqqkcmr5` | 2026-08-12 15:27 |
+| 27 | `addr_test1qqy7hv3v8th5yyyvh9ksvgkad5n3tlswpvfplc0lr6q7vt6k7vknvgwzqkpses26s9avny8vaumkttp205kmmu0xnx2q2zyucu` | 2026-08-12 23:03 |
+| 28 | `addr_test1qpr9hhjea7tpe8sfh35qmyzq0zwm7whx8z5zvg25xm4y0z45paczzqaz0gnngsvkyxm352t8a22ytgxu9fakwh99a9eshkyw5m` | 2026-08-13 13:11 |
+| 29 | `addr_test1qq6u0a72xyh9zggnvu98tflyvuvnu4swm9ran8q66am6szjkhps9nzvxhx8vak9e5202ts4x4szttq9ky8sxndtt0ztsrh4uyy` | 2026-08-13 21:44 |
+| 30 | `addr_test1qrj3asmt7gs9ksl3zul7ug0tlwqs73t72ks203384nnr96q0qyu267hz350kdcp9mchpmq532q0d9q0wccqemtx9e6rs6tvtvf` | 2026-08-14 04:04 |
+| 31 | `addr_test1qrc45vtu8egn26h7kh6d5cddwsyxapjvgtlfelfjzrk4mpz3wmwkylj9kyzrewuqfuzwj05995ec46727g5u23tzvdcqx89crx` | 2026-08-14 15:35 |
+| 32 | `addr_test1qpa42c9za24rgq42pjykh7wkxljzuthe2kyqg5ejnfgz2tc3zujchjgyq2a3vslj5wqu8ykl4dexzvt7ds5npe9r7m8qedth6v` | 2026-08-15 02:39 |
+| 33 | `addr_test1qzh9nmg9ceg2lpc07dvpqg073v2k4dlhvfgnu6l92j3gwxvy6jlx8cfk9cfj2rptvcupafptmmpush2j89dnzss7nqvsw39z8m` | 2026-08-15 09:58 |
+| 34 | `addr_test1qpvajat5kmkcmwfnnvdlyre4kvags5hwh62as0se2spauss3f5xqn2yt2j4jyfxwtt6670h7083aprp43v75zus4vsqqgruuwc` | 2026-08-15 18:00 |
+| 35 | `addr_test1qqcnv8ew3usrjcpv6lf656w89n3mdcycvezyy8zxnf37qhl6jlsr3lyp4qejarhckefja5d94ufs780x3eq8ymvlt0jqk37rrj` | 2026-08-16 00:19 |
+| 36 | `addr_test1qp0rjcetpvl4x8exnw967hk89rn8423cex427p84ctlcyvhjxjts05m92yauwwmhdjn4q73eakllajt3qa8x6c8y72usnxcveg` | 2026-08-16 08:15 |
+| 37 | `addr_test1qzh67glwfa7cmlr3hwcm58gppwgwdts2fqt96w3ms54hgh3fu80l0y0hlaj9vqxvuxhpqkpq4xxxphpyxyxqu9ul98ls4r7hka` | 2026-08-16 20:28 |
+| 38 | `addr_test1qq6jzycme8gk37np20gmzednps4gd6ck7lj4nl3jdfkk78xvg2zn9pedd8t6ggluhv4979nvx3rcdy253nal4zrh65js4zefvl` | 2026-08-17 10:02 |
+| 39 | `addr_test1qpy2esqnrfzlux2lfezdtsu5w9ckgdmqng3mjqac6a9phjyksj73u0e8vuyg088zjxyg6d7994r5tt33f8kjhx5m38wsjns3eg` | 2026-08-17 18:47 |
+| 40 | `addr_test1qqahqfkn204c5wpcv265j7kmxf682t6v4xvlvxypewaklcew3rsxp0z7jxpgtccxnrzvj6um5pdxkr66y34pedpcdqzqqgqle7` | 2026-08-18 03:11 |
+| 41 | `addr_test1qrer7az4js78wrxgfpym6trt8sk5eeg9scwfz5gk7vd96n8t5h3gq6sp9rmgdhl5m6hx7s2f5vzjz58r326qdz0adq0s3uj364` | 2026-08-18 14:27 |
+| 42 | `addr_test1qq9whhjyhl8nt6kstqqqassgucnpg5t2kg9a6nmk5ge3zhhazq57cuhymp82vyn9l59jezf3hzgnh0z4wl8dhd08fl4qtdx9nv` | 2026-08-19 01:18 |
+| 43 | `addr_test1qzwppj6zsn3ljy7fsp5gn253dwra5w05m2kytnuvze0kjztergj0s45zl3d0sm44aa2h2mm2kph22jw79cmegvd6huxqzmqs8n` | 2026-08-19 10:15 |
+| 44 | `addr_test1qqycdgplrw8r09uwmmd2jnfc7jlczdn958f8exsu7xmc37uk0nzt7ygmtmv7tltupfn7289kqcfujqlxpgrdkll09ppqze6h39` | 2026-08-19 16:54 |
+| 45 | `addr_test1qqp92fvm39lx2pyz0ya058vgueggqmj2j2lawwahjh8kegm7ufd65vd9fm0kf6pzflw2c7hdus62jljtx5nearyl92gsudrg5m` | 2026-08-20 04:35 |
+| 46 | `addr_test1qqq3f8jk9rspsszqmywxvht0qk66zg65fxh6qwhxvf3mr0qs5jx6tcr2un9ppm7hffdq9an5sf7zpeshdkdn6z0g5v2sp8he9q` | 2026-08-20 11:51 |
+| 47 | `addr_test1qranpg0raagd5l2qezdt36yjc5pp9r2emhpfsz8yk93jqywch4grmr0j0gdsaugpc37ypx8pfhgacd5kn06e0x0cn7fqdp8ksu` | 2026-08-21 02:11 |
+| 48 | `addr_test1qrnzpqcmqpzs0xfszt0hk6zhxty5r2z22km5dr4qkpaerlt7s3qws6ynfcjjt2wtu0hm04lamxlfp5ae5wrcuracu65qyaqf89` | 2026-08-21 14:38 |
+| 49 | `addr_test1qz2x2zzghwd0lyn0tp9tsjeclp5wmeu2mtfff0lfeaupnagkysnfvkv2k4dert3wnxadwgutjqsx9uc0040sdlsxwkpqn4ckzu` | 2026-08-22 02:46 |
+| 50 | `addr_test1qpnmfqrtcfvcez3pnnp77lwht3855hv0hw9wq76vjcnvs8977ct80caa4uwz07ck4y0zwhmg770pzal0gqk7s5wtjzwqa52kxt` | 2026-08-22 15:33 |
