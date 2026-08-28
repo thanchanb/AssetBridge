@@ -1,0 +1,31 @@
+# AssetBridge Brand Brief & Style Guide
+
+AssetBridge is a secure, privacy-centric asset transfer protocol. Our visual identity reflects advanced zero-knowledge cryptography, modern cross-chain connectivity, and premium usability.
+
+---
+
+## 1. Visual Values
+*   **Security & Anonymity**: Portrayed through shielded motifs, crescent moons, and solid border structures.
+*   **Modern Cryptography**: Represented by neon accents, dark backgrounds, and subtle geometric grids.
+*   **Fluid Connectivity**: Shown as arches, bridges, and smooth animated gradient transitions.
+
+---
+
+## 2. Core Color Palette
+*   **Background (Deep Black-Violet)**: `#08060d`
+*   **Accent Violet (Electric Neon)**: `#aa3bff` (HSL: `272, 100%, 62%`)
+*   **Accent Cyan (Neon Light)**: `#00c2ff` (HSL: `194, 100%, 50%`)
+*   **Text Principal**: `#ffffff` (High Contrast)
+*   **Text Muted (Gray-Blue)**: `#a0aec0`
+
+---
+
+## 3. Typography
+*   **Headings / Title**: `Outfit` (Futuristic geometric sans-serif)
+*   **Body Copy / Interface Elements**: `Inter` or standard system sans-serif (Neutral, legible at small sizes)
+
+---
+
+## 4. Visual Components
+*   **Logo**: Combined bridge deck with crescent moon shield node (`brand/logo.svg`).
+*   **Banner**: Widescreen asset featuring left-aligned typography and right-aligned glowing bridge graphics (`brand/banner.svg`).
