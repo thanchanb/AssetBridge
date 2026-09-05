@@ -18,7 +18,7 @@ describe('AssetBridge Compact Contract', () => {
     try {
       const state = ledger(mockState);
       expect(state).toBeDefined();
-    } catch (e) {
+    } catch {
       // It might throw if the state isn't a valid ZKIR state, but we ensure the function exists.
       expect(ledger).toBeDefined();
     }

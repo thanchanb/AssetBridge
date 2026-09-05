@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ArrowDown, Settings, ShieldAlert, CheckCircle2, Loader2 } from 'lucide-react';
 import './Bridge.css';
 
