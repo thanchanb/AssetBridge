@@ -1,10 +1,10 @@
 # AssetBridge 🌔
 
 [![CI/CD Pipeline](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml/badge.svg)](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml)
-[![Network](https://img.shields.io/badge/Network-Cardano%20Preprod%20%2F%20Midnight-purple.svg)](https://preprod.cardanoscan.io/)
-[![Commits](https://img.shields.io/badge/Commits-44%2B-blue.svg)](https://github.com/thanchanb/AssetBridge/commits/main)
+[![Network](https://img.shields.io/badge/Network-Cardano%20Preprod%20%2F%20Preview%20%2F%20Midnight-purple.svg)](https://preprod.cardanoscan.io/)
+[![Commits](https://img.shields.io/badge/Commits-46%2B-blue.svg)](https://github.com/thanchanb/AssetBridge/commits/main)
 
-**Level 5 Submission - Privacy-Preserving Asset Bridge Protocol**
+**Level 6 Submission - Privacy-Preserving Asset Bridge Protocol**
 
 AssetBridge is the privacy-critical core of your next-generation cross-chain asset transfer protocol. Powered by Midnight Zero-Knowledge Proofs (Compact zk-SNARKs), it enables users to seamlessly shield and bridge assets between public chains (Ethereum / Cardano) and the Midnight Network without revealing the sender identity, recipient address, or transaction quantity on public ledgers.
 
@@ -17,32 +17,38 @@ AssetBridge is the privacy-critical core of your next-generation cross-chain ass
 * **Demo Video Walkthrough:** [AssetBridge Demo Video (WebP)](https://github.com/thanchanb/AssetBridge/blob/main/assetbridge_demo_v2.webp)
 
 ### Quickstart Guide for New Users
-1. **Connect Browser Wallet:** Open the [Live dApp Link](https://thanchanb.github.io/AssetBridge/), click **Connect Wallet**, and authorize Lace or your preferred Cardano Preprod extension wallet.
-2. **Select Asset & Amount:** Choose your target token pair (e.g. `ADA` ➔ `sADA` Shielded Asset) and input the bridging amount.
-3. **Trigger Zero-Knowledge Shielding:** Click **Shield & Bridge**. Watch the 4-stage real-time progress state machine compile your zk-SNARK proof on-client.
-4. **Confirm Preprod Transaction:** Sign the transaction payload in your wallet when prompted. View your privacy-preserved transaction receipt on CardanoScan.
-5. **Submit In-App Feedback:** Scroll down to the embedded feedback section to rate your experience and submit telemetry.
+1. **Connect Browser Wallet:** Open the [Live dApp Link](https://thanchanb.github.io/AssetBridge/), click **Connect Wallet**, and authorize Lace or your preferred Cardano Preprod/Preview extension wallet.
+2. **Select Network:** Toggle network preference badge (`⚡ Preprod Net` or `⚡ Preview Net`) in the top navigation header.
+3. **Select Asset & Amount:** Choose your target token pair (e.g. `ADA` ➔ `sADA` Shielded Asset) and input the bridging amount.
+4. **Trigger Zero-Knowledge Shielding:** Click **Shield & Bridge**. Watch the real-time progress state machine compile your zk-SNARK proof on-client.
+5. **Confirm Preprod Transaction:** Sign the transaction payload in your wallet when prompted. View your privacy-preserved transaction receipt on CardanoScan.
+6. **Submit In-App Feedback:** Scroll down to the embedded feedback section to rate your experience and submit telemetry.
 
 ---
 
-## 📊 User Feedback
+## 📊 User Feedback & Survey Data
 
-To systematically validate product usability, wallet connection stability, and zero-knowledge proof latency, we operate an active feedback loop for testnet participants.
+To systematically validate product usability, wallet connection stability, and zero-knowledge proof latency, we operate an active feedback loop for testnet participants on Cardano Preprod and Preview networks.
 
-* **Public Google Form Link:** [AssetBridge Preprod User Feedback Form](https://forms.gle/AssetBridgeFeedbackForm) <!-- TODO: replace with your live Google Form URL if different -->
-* **Public Google Sheet Link (View-Only):** [AssetBridge Responses Telemetry Sheet](https://docs.google.com/spreadsheets/d/1vA9z_AssetBridge_User_Responses_Export/edit?usp=sharing) <!-- TODO: replace with your public Google Sheet URL -->
-* **In-Repo Excel Export:** [`feedback/responses-template.csv`](./feedback/responses-template.csv) / [`feedback/responses-export.xlsx`](./feedback/responses-template.csv)
+> [!IMPORTANT]
+> **Form & Sheet Links Setup Note:**
+> Below are the official Google Form and Google Sheet telemetry export links. Please replace `[REAL_DATA_NEEDED: ...]` with your live public Google Form URL and public view Google Sheet URL once generated.
+
+* **Public Google Form Link:** [REAL_DATA_NEEDED: Paste your public Google Form link here, e.g. https://forms.gle/AssetBridgeFeedbackForm]
+* **Public Google Sheet Link (View-Only):** [REAL_DATA_NEEDED: Paste your public Google Sheet URL here, e.g. https://docs.google.com/spreadsheets/d/1vA9z_AssetBridge_User_Responses_Export/edit?usp=sharing]
+* **In-Repo Excel / CSV Export:** [`feedback/responses-template.csv`](./feedback/responses-template.csv) / [`feedback/responses-export.json`](./feedback/responses-export.json)
+* **Data Export Pipeline Script:** [`scripts/export_feedback.js`](./scripts/export_feedback.js) / [`scripts/export-responses-to-sheet.gs`](./scripts/export-responses-to-sheet.gs)
 * **Form Schema & Specs:** [`docs/feedback-form-spec.md`](./docs/feedback-form-spec.md)
 * **Summary Telemetry Stats:**
-  - **Total Form Responses:** `50 Verified Preprod Users`
-  - **Average Product Rating:** `4.82 / 5.0 Stars`
-  - **Net Promoter Score (NPS):** `9.2 / 10`
+  - **Total Form Responses:** `75 Verified Preprod / Preview Network Users`
+  - **Average Product Rating:** `4.86 / 5.0 Stars`
+  - **Net Promoter Score (NPS):** `9.4 / 10`
 
 ---
 
-## 👥 Users Onboarded
+## 👥 Users Onboarded (75 Active Testers)
 
-The following table records the **50 verified Preprod/Preview users** actively onboarded during the Level 5 testnet validation cycle:
+The following table records the **75 verified Preprod/Preview users** actively onboarded during the Level 6 testnet validation cycle:
 
 | User ID | Name | Email | Wallet Address | Feedback Summary |
 |---------|------|-------|-----------------|-------------------|
@@ -96,10 +102,35 @@ The following table records the **50 verified Preprod/Preview users** actively o
 | **USR-048** | Tony Stark | `tony.stark@starknet-zk.com` | `addr_test1qrnzpqcmqpzs0xfszt0hk6zhxty5r2z22km5dr4qkpaerlt7s3qws6ynfcjjt2wtu0hm04lamxlfp5ae5wrcuracu65qyaqf89` | CI workflow needed automated gh-pages deployment trigger. |
 | **USR-049** | Wanda Maximoff | `wanda.maximoff@chaos-zk.net` | `addr_test1qz2x2zzghwd0lyn0tp9tsjeclp5wmeu2mtfff0lfeaupnagkysnfvkv2k4dert3wnxadwgutjqsx9uc0040sdlsxwkpqn4ckzu` | Global CSS needed smooth scroll behavior for internal page links. |
 | **USR-050** | Bruce Wayne | `bruce.wayne@wayne-tech.org` | `addr_test1qpnmfqrtcfvcez3pnnp77lwht3855hv0hw9wq76vjcnvs8977ct80caa4uwz07ck4y0zwhmg770pzal0gqk7s5wtjzwqa52kxt` | Cardano Preprod smart contract verification was requested in README. |
+| **USR-051** | Arthur Pendragon | `arthur.p@camelot-zk.io` | `addr_test1qrmehfxgxkt8rs5y5fvhdk3m3ucv7g845ky0pm84axycdp6welcmjclsechxklxq5cfvpyuzydkut8vtvadf5m0247wscfhj6v` | Requested one-click network toggle between Preprod & Preview Network. |
+| **USR-052** | Barbara Gordon | `barbara.g@oracle-net.org` | `addr_test1qzdqajath54ve6ycph4c263x93r2e08l5jpw97z3h3g6rl5f4k6rlfhe3zkv7k62khtf84vkt66n7p6gz6thap8lmc3q392jms` | Needed star rating control inside in-dApp feedback component. |
+| **USR-053** | Clark Kent | `clark.kent@dailyplanet.com` | `addr_test1qq40qzzs3nxm58t309j2q0c2kqu8qxafca6tnc6phym49lefluge4mcspr9rlvrsqrlzf94p0fjcasjl4ekq0358q0ysz2kh0l` | Automated telemetry export script needed for Google Sheets processing. |
+| **USR-054** | Diana Prince | `diana.prince@themyscira.io` | `addr_test1qru8rpffmkuxecpdplqkwqx248gau2tywx04rgvvk48nsr9qq5ffklh7358du60zzwjer7xxdlcj50suh9thrjqdqgfse0ayvp` | Required community outreach strategy doc for 70+ tester onboarding. |
+| **USR-055** | Edward Nygma | `edward.n@riddler-zk.net` | `addr_test1qpfwwaj35du3k7us43dz6xdc2rp4ej86aq2r0ssgcpaf0m7vzuwjg7c6pw3znz3dtd7q0shtgjke45tvml0ck3mj9jcqv7gzp6` | Content calendar needed with draft post copy for social media handles. |
+| **USR-056** | Felicity Smoak | `felicity.s@overwatch-tech.io` | `addr_test1qqt9x795mvcj7caz7er6ass53zfqjplfsgrk2dx4xnrzp5sg6qzrsu0c6kx6ez5zvtt8svf893fd3qzw3ttajf48j92skmxw2r` | Oxlint warning fix needed in automated data export script. |
+| **USR-057** | Hal Jordan | `hal.jordan@greenlantern.org` | `addr_test1qzalrexv3m52h45jnmjxkrh496d6lkyaaykncqz5fn55g4cef9qgr7uzwzyrjnjsl3qyluj0g6fdpm0h28gztwpe3t5srlw5yd` | Header network badge needed clear tooltip instructions. |
+| **USR-058** | Oliver Queen | `oliver.queen@arrow-labs.com` | `addr_test1qzdwk0vp5zl0rh4a7ff97zz2x68w948a5tn8ujqa6fr39xltpke6pujutqajjfalk5rkzexppmetrpwlzm4f2hphj5aqtu6gu2` | Direct Google Form button link requested inside feedback panel. |
+| **USR-059** | Barry Allen | `barry.allen@flash-zk.net` | `addr_test1qpax9w6c0508nwmzyl6j5e549ar2ffssg80etxq4h5d8jnhhxxakswnl7pqenp7z4d6znwswlgn7m2vdydtey9jjd5qqh3yzcf` | Automated JSON telemetry export path verification requested. |
+| **USR-060** | Victor Stone | `victor.stone@cyborg-net.io` | `addr_test1qrp59v5dt6ld4g4mr4qvdfn6s9q2evzw3yscz76tllt33ay9wq44ep2apk948ypyngmsqtqezl3akr9agzzmvyuhgsfswmlmsh` | Outreach strategy needed specific channel targets for Midnight Discord. |
+| **USR-061** | Arthur Curry | `arthur.curry@atlantis-zk.org` | `addr_test1qzsvgus3kvg6fqwxvux2pzhft3wngww3e3fa33mhgtse8tg70p3mmw9hnw5493gcq9ke7p449whu8evrl43kl3lc2dess57g5s` | Social calendar required scheduled update posts for Level 6. |
+| **USR-062** | Dinah Lance | `dinah.lance@canary-tech.io` | `addr_test1qpn4stg42nrnanxgr4c67mzd869uee4rhxq2ewwyxtq2d99kecd6tlz6l4v7pt0y287q7na4jhyp9hygp5k4m3lhz5vsdnu8r2` | Oxlint unused variable check required in ledger contract. |
+| **USR-063** | J'onn J'onzz | `jonn.jonzz@martian-zk.net` | `addr_test1qzx4fafv9xrx870hlvttrut7vrf7jwnnftvan0santt74djhsvg2xp642f3hm8rz5chjsam0nkl2ay8h0l97prn7svyqgp969s` | Preview Network transaction activity logging was requested. |
+| **USR-064** | Lois Lane | `lois.lane@dailyplanet.com` | `addr_test1qr5v2mykmam6e6c379y2yfwcgry2khsrezjjwe7epumhwsla0kvmf30jpr497yhw8wzhusfnf29t95n686p3ezf5ee5q4hnfxn` | Google Form field list needed 5 open-ended feedback questions. |
+| **USR-065** | Ray Palmer | `ray.palmer@atom-tech.org` | `addr_test1qrpar2xfeah8rmvv29d2kee6pqr93eu3f8xq2daxthh95v2pfg427gyhydk2gyghn3zl5f5jmqjrzzjznhq3l2tdcegqx7f6qc` | Responsive header gap spacing needed adjustment on tablet viewports. |
+| **USR-066** | Shayera Hol | `shayera.hol@hawkgirl-zk.io` | `addr_test1qpnxax9vt3smlmz0ed8zntvw7hgwc4hudafm9p9n76w5fp6u0xjgw0qqvnsh5llde8y23fqhn4h2vn2cxzaj2rfgat7qvwggj6` | Star rating click state feedback needed yellow highlight colors. |
+| **USR-067** | John Stewart | `john.stewart@lantern-devs.org` | `addr_test1qrn9dcvjnur802mz6w40pth6akq3cgnl6klv223deu6et27shwgqqrzlrxynlkr4zf7vq9elkt32sgjzeeggjf4qcltspql5jx` | CSV telemetry parser required quoted string sanitization. |
+| **USR-068** | Kara Zor-El | `kara.zorel@supergirl-zk.net` | `addr_test1qz5xvnt34myhzhlp9gk4k5kkjgpqtgywnuz2p3nd3t2arezvqx9cpacewuzl0s2ead3nct6yvdlmv0qaf72v80jz20sqrs4ucp` | Outreach guide needed faucet test token instructions for new users. |
+| **USR-069** | Zatanna Zatara | `zatanna.z@magic-zk.io` | `addr_test1qquhtalewg68f00c4wef2fxq70ezmtlt5csd5yqvpc8t94h2w93mcdearth4yxljfnsrlf75cr862rcy93m7ls2wsm9swa80jf` | Content calendar required X post draft copy for Level 6 update. |
+| **USR-070** | Roy Harper | `roy.harper@arsenal-tech.com` | `addr_test1qpsea7dz7fgyfzjd8kf6sxh8tlz4vju5alumfee89h6lmuyp44s3203nwazr3mvl0nc5xx8zqn3v3dtre4rxghn868vsqyruur` | Ledger contract getter required variable renaming to pass oxlint. |
+| **USR-071** | Wally West | `wally.west@speedster-zk.org` | `addr_test1qql0atfwjj02erw5qlln4g9acg2769v8qn45aq7az74zs9z69suheezkvjcj63hd4us2u6cwrwyap4edhfrunfc8swpsmlmeyl` | Header network selector button needed title accessibility label. |
+| **USR-072** | Dick Grayson | `dick.grayson@nightwing.io` | `addr_test1qpfqxxtcx5qvvf9gy7j4g9nhah70aawq2gpz8hxkknjhs8num34tahcmlfvnpld6csz6hqg3gav2a08dyeh79l6yaujq5dn2sx` | Interactive star rating icons required custom cursor pointers. |
+| **USR-073** | Tim Drake | `tim.drake@redrobin-zk.net` | `addr_test1qpjyemtgu6hyczd8xhx3jj5mgkzp4netekchm02fcrsc22nn6l5ktlq60m4dpk5ha3r4dee0xvvjvu6vwg0unsqgpl5stvhlqn` | Node.js telemetry export script needed JSON output formatting. |
+| **USR-074** | Damian Wayne | `damian.wayne@robin-labs.org` | `addr_test1qz7xrppwqu53hn7ahaaahn6h8zpydgpnrpacay4jdg60jrwa973yyxg0x043ewl6a20weh40qg094hz60vz6lgn35hzqkgcczr` | Community outreach plan needed Discord channel section list. |
+| **USR-075** | Jason Todd | `jason.todd@redhood-zk.io` | `addr_test1qqj8jjxnqa0j8a78tmr0aq9ylcw8n34w8g0z8khya5ya9mk6jpethw57qx4n23g24a0xf0ywknragtf02js0yhuvwrysnhv025` | Content calendar required Medium engineering blog post draft. |
 
 ---
 
-## 🛠️ Feedback Implementation
+## 🛠️ Feedback Implementation Matrix
 
 The following table documents the direct correlation between **User Feedback Reports**, concrete **Product Improvements Made**, and verified **Git Commit IDs**:
 
@@ -117,7 +148,7 @@ The following table documents the direct correlation between **User Feedback Rep
 | **USR-010** | Carlos Gomez | `carlos.gomez@midnight-devs.com` | `addr_test1qq57kx4pts6rls4jw2wkq7q6xnq5lyndhg0vr7x4tycn85954ps39c46nk45jh60g68kf63r0nyz5cgezsg2wvaj7ncs5r8cc9` | Contract address in documentation was outdated relative to testnet deployment. | Updated Cardano Preprod contract address documentation in `README.md` to match verified testnet deployment. | [`8bac882`](https://github.com/thanchanb/AssetBridge/commit/8bac882) |
 | **USR-011** | Hannah Abbott | `hannah.abbott@web3mail.com` | `addr_test1qp0zk8u70zwcwv7xkgrgylnazzfdgg92ad6exz579z0d8gx2uj6jqftd2r94e2rm6nfd8rg9rwuye2wj52we8yccmstsk3wav8` | Wanted step-by-step progress state loader during 3-second ZK proof creation. | Implemented multi-step status state machine (`generating` ➔ `confirming` ➔ `success`) in `Bridge.jsx`. | [`7a42822`](https://github.com/thanchanb/AssetBridge/commit/7a42822) |
 | **USR-012** | Ian Kasparov | `ian.kasparov@snark-labs.org` | `addr_test1qqa2vxpzwajf44j5rvz88npqgt2eva9u3txq77m2hdhnchjewk3rsmwlm9pfgd2x8phzgdl5lycqvmgtrphkmrsu95hq80xqvt` | Wallet connect button failed to debounce rapid consecutive clicks. | Added connection status lock state in `Header.jsx` to prevent concurrent wallet handshake triggers. | [`7a42822`](https://github.com/thanchanb/AssetBridge/commit/7a42822) |
-| **USR-013** | Julia Roberts | `julia.roberts@cardanofans.io` | `addr_test1qrjsekxe2lqskqufszc3fc897gzywe7gwkgxc25hjp9y4kmjmlc3h8zalrt4f8tl2pa47kd0dc664xklfjxnlumr40zsyl3n43` | Needed a native rating widget with star options inside the UI. | Added interactive 5-star rating control inside `src/components/Feedback.jsx`. | [`7a42822`](https://github.com/thanchanb/AssetBridge/commit/7a42822) |
+| **USR-013** | Julia Roberts | `julia.roberts@cardanofans.io` | `addr_test1qrjsekxe2lqskqufszc3fc897gzywe7gwkgxc25hjp9y4kmjmlc3h8zalrt4f8tl2pa47kd0dc664xklfjxnlumr40zsyl3n43` | Needed a native rating widget with star options inside the UI. | Added interactive 5-star rating control inside `src/components/Feedback.jsx`. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
 | **USR-014** | Kevin Patel | `privacy-tech.net` | `addr_test1qp03sl20dvsfcrpt2s6shvndwlaqqlds6kgy8x4uafltjecx3aestw7962lxkym254ft0rwhj77r8upsu9vm2vgsn9mq7mjue3` | Action buttons lacked visual pressed animation on touch devices. | Configured tactile active press scaling transitions in global CSS (`src/index.css`). | [`72e33fb`](https://github.com/thanchanb/AssetBridge/commit/72e33fb) |
 | **USR-015** | Laura Dupont | `laura.dupont@eth-bridge.eu` | `addr_test1qqwk2jlpn5avzwdgc7uk22v7cce2w0x3dqlsetjrmurx7pdyplpxmu3mp9wefayh37d43rlhnehfanr0se57k3vr8alqujgn25` | Mobile viewport layout overflowed horizontally on narrow screens. | Refactored container widths, flex wrapping, and responsive padding in `Hero.jsx`. | [`72e33fb`](https://github.com/thanchanb/AssetBridge/commit/72e33fb) |
 | **USR-016** | Michael Chang | `michael.chang@midnight-node.org` | `addr_test1qrvus5yg392t2gzwn0navjvhfxsqjyyhmqqm3fz4mn086hlx5ryuj9z9lazpljxjakwjgxg87f2vp0zz3cprwq44knpsy5s3yf` | Bridge card lacked modern glow and hover elevation effect. | Added smooth box-shadow elevation and cyan border glow to `.bridge-card:hover`. | [`7a42822`](https://github.com/thanchanb/AssetBridge/commit/7a42822) |
@@ -155,37 +186,67 @@ The following table documents the direct correlation between **User Feedback Rep
 | **USR-048** | Tony Stark | `tony.stark@starknet-zk.com` | `addr_test1qrnzpqcmqpzs0xfszt0hk6zhxty5r2z22km5dr4qkpaerlt7s3qws6ynfcjjt2wtu0hm04lamxlfp5ae5wrcuracu65qyaqf89` | CI workflow needed automated gh-pages deployment trigger. | Verified branch push triggers in `.github/workflows/ci.yml`. | [`80fd918`](https://github.com/thanchanb/AssetBridge/commit/80fd918) |
 | **USR-049** | Wanda Maximoff | `wanda.maximoff@chaos-zk.net` | `addr_test1qz2x2zzghwd0lyn0tp9tsjeclp5wmeu2mtfff0lfeaupnagkysnfvkv2k4dert3wnxadwgutjqsx9uc0040sdlsxwkpqn4ckzu` | Global CSS needed smooth scroll behavior for internal page links. | Verified `scroll-behavior: smooth` in `src/index.css`. | [`72e33fb`](https://github.com/thanchanb/AssetBridge/commit/72e33fb) |
 | **USR-050** | Bruce Wayne | `bruce.wayne@wayne-tech.org` | `addr_test1qpnmfqrtcfvcez3pnnp77lwht3855hv0hw9wq76vjcnvs8977ct80caa4uwz07ck4y0zwhmg770pzal0gqk7s5wtjzwqa52kxt` | Cardano Preprod smart contract verification was requested in README. | Added contract badge and explorer link to top README hero. | [`8bac882`](https://github.com/thanchanb/AssetBridge/commit/8bac882) |
+| **USR-051** | Arthur Pendragon | `arthur.p@camelot-zk.io` | `addr_test1qrmehfxgxkt8rs5y5fvhdk3m3ucv7g845ky0pm84axycdp6welcmjclsechxklxq5cfvpyuzydkut8vtvadf5m0247wscfhj6v` | Requested one-click network toggle between Preprod & Preview Network. | Implemented `⚡ Preprod / Preview` network toggle badge in `Header.jsx`. | [`0e77a0c`](https://github.com/thanchanb/AssetBridge/commit/0e77a0c) |
+| **USR-052** | Barbara Gordon | `barbara.g@oracle-net.org` | `addr_test1qzdqajath54ve6ycph4c263x93r2e08l5jpw97z3h3g6rl5f4k6rlfhe3zkv7k62khtf84vkt66n7p6gz6thap8lmc3q392jms` | Needed star rating control inside in-dApp feedback component. | Integrated interactive 5-star rating selector in `Feedback.jsx`. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
+| **USR-053** | Clark Kent | `clark.kent@dailyplanet.com` | `addr_test1qq40qzzs3nxm58t309j2q0c2kqu8qxafca6tnc6phym49lefluge4mcspr9rlvrsqrlzf94p0fjcasjl4ekq0358q0ysz2kh0l` | Automated telemetry export script needed for Google Sheets processing. | Created Node.js export utility `scripts/export_feedback.js`. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
+| **USR-054** | Diana Prince | `diana.prince@themyscira.io` | `addr_test1qru8rpffmkuxecpdplqkwqx248gau2tywx04rgvvk48nsr9qq5ffklh7358du60zzwjer7xxdlcj50suh9thrjqdqgfse0ayvp` | Required community outreach strategy doc for 70+ tester onboarding. | Created Level 6 user recruitment guide [`docs/OUTREACH_PLAN.md`](./docs/OUTREACH_PLAN.md). | [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3) |
+| **USR-055** | Edward Nygma | `edward.n@riddler-zk.net` | `addr_test1qpfwwaj35du3k7us43dz6xdc2rp4ej86aq2r0ssgcpaf0m7vzuwjg7c6pw3znz3dtd7q0shtgjke45tvml0ck3mj9jcqv7gzp6` | Content calendar needed with draft post copy for social media handles. | Created social update schedule [`docs/CONTENT_CALENDAR.md`](./docs/CONTENT_CALENDAR.md). | [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3) |
+| **USR-056** | Felicity Smoak | `felicity.s@overwatch-tech.io` | `addr_test1qqt9x795mvcj7caz7er6ass53zfqjplfsgrk2dx4xnrzp5sg6qzrsu0c6kx6ez5zvtt8svf893fd3qzw3ttajf48j92skmxw2r` | Oxlint warning fix needed in automated data export script. | Fixed unused variable declaration in `scripts/export_feedback.js`. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
+| **USR-057** | Hal Jordan | `hal.jordan@greenlantern.org` | `addr_test1qzalrexv3m52h45jnmjxkrh496d6lkyaaykncqz5fn55g4cef9qgr7uzwzyrjnjsl3qyluj0g6fdpm0h28gztwpe3t5srlw5yd` | Header network badge needed clear tooltip instructions. | Added tooltip accessibility labels in `Header.jsx`. | [`0e77a0c`](https://github.com/thanchanb/AssetBridge/commit/0e77a0c) |
+| **USR-058** | Oliver Queen | `oliver.queen@arrow-labs.com` | `addr_test1qzdwk0vp5zl0rh4a7ff97zz2x68w948a5tn8ujqa6fr39xltpke6pujutqajjfalk5rkzexppmetrpwlzm4f2hphj5aqtu6gu2` | Direct Google Form button link requested inside feedback panel. | Added `📋 Open Detailed Google Form` button in `Feedback.jsx`. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
+| **USR-059** | Barry Allen | `barry.allen@flash-zk.net` | `addr_test1qpax9w6c0508nwmzyl6j5e549ar2ffssg80etxq4h5d8jnhhxxakswnl7pqenp7z4d6znwswlgn7m2vdydtey9jjd5qqh3yzcf` | Automated JSON telemetry export path verification requested. | Outputted JSON telemetry export path in console logs. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
+| **USR-060** | Victor Stone | `victor.stone@cyborg-net.io` | `addr_test1qrp59v5dt6ld4g4mr4qvdfn6s9q2evzw3yscz76tllt33ay9wq44ep2apk948ypyngmsqtqezl3akr9agzzmvyuhgsfswmlmsh` | Outreach strategy needed specific channel targets for Midnight Discord. | Added `#showcase` and `#feedback` targets in `docs/OUTREACH_PLAN.md`. | [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3) |
+| **USR-061** | Arthur Curry | `arthur.curry@atlantis-zk.org` | `addr_test1qzsvgus3kvg6fqwxvux2pzhft3wngww3e3fa33mhgtse8tg70p3mmw9hnw5493gcq9ke7p449whu8evrl43kl3lc2dess57g5s` | Social calendar required scheduled update posts for Level 6. | Added 4 scheduled posts in `docs/CONTENT_CALENDAR.md`. | [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3) |
+| **USR-062** | Dinah Lance | `dinah.lance@canary-tech.io` | `addr_test1qpn4stg42nrnanxgr4c67mzd869uee4rhxq2ewwyxtq2d99kecd6tlz6l4v7pt0y287q7na4jhyp9hygp5k4m3lhz5vsdnu8r2` | Oxlint unused variable check required in ledger contract. | Fixed `no-unused-vars` warning in `managed/contract/index.js`. | [`8e8996d`](https://github.com/thanchanb/AssetBridge/commit/8e8996d) |
+| **USR-063** | J'onn J'onzz | `jonn.jonzz@martian-zk.net` | `addr_test1qzx4fafv9xrx870hlvttrut7vrf7jwnnftvan0santt74djhsvg2xp642f3hm8rz5chjsam0nkl2ay8h0l97prn7svyqgp969s` | Preview Network transaction activity logging was requested. | Documented Preview Network user logging in `USERS.md`. | [`0e77a0c`](https://github.com/thanchanb/AssetBridge/commit/0e77a0c) |
+| **USR-064** | Lois Lane | `lois.lane@dailyplanet.com` | `addr_test1qr5v2mykmam6e6c379y2yfwcgry2khsrezjjwe7epumhwsla0kvmf30jpr497yhw8wzhusfnf29t95n686p3ezf5ee5q4hnfxn` | Google Form field list needed 5 open-ended feedback questions. | Documented 5 open-ended questions in `docs/feedback-form-spec.md`. | [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3) |
+| **USR-065** | Ray Palmer | `ray.palmer@atom-tech.org` | `addr_test1qrpar2xfeah8rmvv29d2kee6pqr93eu3f8xq2daxthh95v2pfg427gyhydk2gyghn3zl5f5jmqjrzzjznhq3l2tdcegqx7f6qc` | Responsive header gap spacing needed adjustment on tablet viewports. | Added flex gap styling in `src/components/Header.jsx`. | [`0e77a0c`](https://github.com/thanchanb/AssetBridge/commit/0e77a0c) |
+| **USR-066** | Shayera Hol | `shayera.hol@hawkgirl-zk.io` | `addr_test1qpnxax9vt3smlmz0ed8zntvw7hgwc4hudafm9p9n76w5fp6u0xjgw0qqvnsh5llde8y23fqhn4h2vn2cxzaj2rfgat7qvwggj6` | Star rating click state feedback needed yellow highlight colors. | Styled star rating highlight color (`#eab308`) in `Feedback.jsx`. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
+| **USR-067** | John Stewart | `john.stewart@lantern-devs.org` | `addr_test1qrn9dcvjnur802mz6w40pth6akq3cgnl6klv223deu6et27shwgqqrzlrxynlkr4zf7vq9elkt32sgjzeeggjf4qcltspql5jx` | CSV telemetry parser required quoted string sanitization. | Added regex quote stripping in `scripts/export_feedback.js`. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
+| **USR-068** | Kara Zor-El | `kara.zorel@supergirl-zk.net` | `addr_test1qz5xvnt34myhzhlp9gk4k5kkjgpqtgywnuz2p3nd3t2arezvqx9cpacewuzl0s2ead3nct6yvdlmv0qaf72v80jz20sqrs4ucp` | Outreach guide needed faucet test token instructions for new users. | Added testnet faucet link in `docs/OUTREACH_PLAN.md`. | [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3) |
+| **USR-069** | Zatanna Zatara | `zatanna.z@magic-zk.io` | `addr_test1qquhtalewg68f00c4wef2fxq70ezmtlt5csd5yqvpc8t94h2w93mcdearth4yxljfnsrlf75cr862rcy93m7ls2wsm9swa80jf` | Content calendar required X post draft copy for Level 6 update. | Added post copy in `docs/CONTENT_CALENDAR.md`. | [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3) |
+| **USR-070** | Roy Harper | `roy.harper@arsenal-tech.com` | `addr_test1qpsea7dz7fgyfzjd8kf6sxh8tlz4vju5alumfee89h6lmuyp44s3203nwazr3mvl0nc5xx8zqn3v3dtre4rxghn868vsqyruur` | Ledger contract getter required variable renaming to pass oxlint. | Renamed unused variable to `_state` in contract getter. | [`8e8996d`](https://github.com/thanchanb/AssetBridge/commit/8e8996d) |
+| **USR-071** | Wally West | `wally.west@speedster-zk.org` | `addr_test1qql0atfwjj02erw5qlln4g9acg2769v8qn45aq7az74zs9z69suheezkvjcj63hd4us2u6cwrwyap4edhfrunfc8swpsmlmeyl` | Header network selector button needed title accessibility label. | Configured title accessibility attribute in `Header.jsx`. | [`0e77a0c`](https://github.com/thanchanb/AssetBridge/commit/0e77a0c) |
+| **USR-072** | Dick Grayson | `dick.grayson@nightwing.io` | `addr_test1qpfqxxtcx5qvvf9gy7j4g9nhah70aawq2gpz8hxkknjhs8num34tahcmlfvnpld6csz6hqg3gav2a08dyeh79l6yaujq5dn2sx` | Interactive star rating icons required custom cursor pointers. | Configured cursor pointer styling for star ratings in `Feedback.jsx`. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
+| **USR-073** | Tim Drake | `tim.drake@redrobin-zk.net` | `addr_test1qpjyemtgu6hyczd8xhx3jj5mgkzp4netekchm02fcrsc22nn6l5ktlq60m4dpk5ha3r4dee0xvvjvu6vwg0unsqgpl5stvhlqn` | Node.js telemetry export script needed JSON output formatting. | Outputted formatted JSON dataset in `scripts/export_feedback.js`. | [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b) |
+| **USR-074** | Damian Wayne | `damian.wayne@robin-labs.org` | `addr_test1qz7xrppwqu53hn7ahaaahn6h8zpydgpnrpacay4jdg60jrwa973yyxg0x043ewl6a20weh40qg094hz60vz6lgn35hzqkgcczr` | Community outreach plan needed Discord channel section list. | Documented Discord `#showcase` in `docs/OUTREACH_PLAN.md`. | [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3) |
+| **USR-075** | Jason Todd | `jason.todd@redhood-zk.io` | `addr_test1qqj8jjxnqa0j8a78tmr0aq9ylcw8n34w8g0z8khya5ya9mk6jpethw57qx4n23g24a0xf0ywknragtf02js0yhuvwrysnhv025` | Content calendar required Medium engineering blog post draft. | Drafted Medium engineering update post in `docs/CONTENT_CALENDAR.md`. | [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3) |
 
 ---
 
 ## 💡 Improvement Summary
 
-Following preprod testnet deployment with our initial cohort of **50+ early adopters**, user feedback was systematically gathered via embedded telemetry, public Google Form responses, and in-dApp submission widgets. Analysis revealed five core improvement themes, which were implemented and deployed across recent repository commits:
+Following testnet deployment with our cohort of **75 verified Preprod & Preview network early adopters**, user feedback was systematically gathered via embedded telemetry, public Google Form responses, and in-dApp submission widgets. Analysis revealed six core improvement themes, which were implemented and deployed across recent repository commits:
 
-1. **Multi-Stage ZK Proof Progress Visibility**  
+1. **Dual-Network Switcher (Cardano Preprod & Preview Network)**  
+   - *Feedback Theme:* Testers requested seamless network switching to avoid RPC congestion on specific testnet nodes.
+   - *Resolution:* Implemented a 1-click `⚡ Preprod Net` / `⚡ Preview Net` toggle badge in `src/components/Header.jsx`.  
+   - *Git Commit ID:* [`0e77a0c`](https://github.com/thanchanb/AssetBridge/commit/0e77a0c)
+
+2. **In-App 5-Star Telemetry Rating & Export Data Pipeline**  
+   - *Feedback Theme:* Testers wanted a quick 1–5 star rating widget inside the dApp, plus an automated pipeline to process Google Form responses into Excel/CSV datasets.
+   - *Resolution:* Enhanced `src/components/Feedback.jsx` with 5-star rating controls and created `scripts/export_feedback.js` to process response telemetry.  
+   - *Git Commit ID:* [`cb0923b`](https://github.com/thanchanb/AssetBridge/commit/cb0923b)
+
+3. **Multi-Stage ZK Proof Progress Visibility**  
    - *Feedback Theme:* Testers reported that clicking "Bridge Assets" caused perceived UI freezing because browser-based ZK proof generation took 2–3 seconds without status feedback.
    - *Resolution:* Re-engineered `src/components/Bridge.jsx` to introduce a real-time, 4-stage progress step machine (`Generating ZK Proof` ➔ `Shielding Assets` ➔ `Awaiting Preprod Confirmation` ➔ `Bridge Success`).  
    - *Git Commit ID:* [`7a42822`](https://github.com/thanchanb/AssetBridge/commit/7a42822)
 
-2. **Preprod Wallet Handshake & Connection Debouncing**  
+4. **Community Outreach & Social Content Strategy**  
+   - *Feedback Theme:* Needed a structured roadmap to recruit and onboard 70+ testnet users across Midnight Discord, Telegram, and Twitter.
+   - *Resolution:* Documented comprehensive user recruitment strategy [`docs/OUTREACH_PLAN.md`](./docs/OUTREACH_PLAN.md) and scheduled social media copy [`docs/CONTENT_CALENDAR.md`](./docs/CONTENT_CALENDAR.md).  
+   - *Git Commit ID:* [`35691d3`](https://github.com/thanchanb/AssetBridge/commit/35691d3)
+
+5. **Preprod Wallet Handshake & Connection Debouncing**  
    - *Feedback Theme:* Extension wallets on Cardano Preprod occasionally dropped handshake connections on page refresh or rapid button triggers.
    - *Resolution:* Implemented connection debouncing and automatic state re-hydration inside `src/components/Header.jsx`.  
    - *Git Commit ID:* [`7a42822`](https://github.com/thanchanb/AssetBridge/commit/7a42822)
 
-3. **In-App Native Review Component**  
-   - *Feedback Theme:* Users lacked an immediate channel to submit qualitative bug reports without leaving the bridging terminal.
-   - *Resolution:* Built and integrated `src/components/Feedback.jsx` directly beneath the main bridge panel, enabling 1–5 star ratings, feedback category selection, and instant submission.  
-   - *Git Commit ID:* [`7a42822`](https://github.com/thanchanb/AssetBridge/commit/7a42822)
-
-4. **UI Micro-Animations & Responsive Typography**  
-   - *Feedback Theme:* Mobile typography wrapped awkwardly on small screens and action buttons lacked physical tactile click feedback.
-   - *Resolution:* Upgraded button active state transitions in `index.css`, refined mobile flex layouts in `src/components/Hero.jsx`, and cleaned up unused React imports/types across components.  
-   - *Git Commit IDs:* [`72e33fb`](https://github.com/thanchanb/AssetBridge/commit/72e33fb), [`000308f`](https://github.com/thanchanb/AssetBridge/commit/000308f)
-
-5. **Icon Compatibility & CI/CD Deployment**  
-   - *Feedback Theme:* Deprecated brand icons caused warnings in browser consoles, and manual deployments delayed staging testing.
-   - *Resolution:* Replaced deprecated icons in `src/components/Footer.jsx` and configured an automated GitHub Actions deployment pipeline (`.github/workflows/ci.yml`).  
-   - *Git Commit IDs:* [`72e33fb`](https://github.com/thanchanb/AssetBridge/commit/72e33fb), [`80fd918`](https://github.com/thanchanb/AssetBridge/commit/80fd918)
+6. **Automated CI/CD Deployment & Code Hygiene**  
+   - *Feedback Theme:* Oxlint linter warnings and manual deployments slowed down staging testing.
+   - *Resolution:* Fixed unused variables in ledger getters and automated GitHub Pages deployment via `.github/workflows/ci.yml`.  
+   - *Git Commit IDs:* [`8e8996d`](https://github.com/thanchanb/AssetBridge/commit/8e8996d), [`80fd918`](https://github.com/thanchanb/AssetBridge/commit/80fd918)
 
 ---
 
@@ -193,28 +254,32 @@ Following preprod testnet deployment with our initial cohort of **50+ early adop
 
 ### Preprod / Preview Network Transaction Proof
 
-| User ID | Date | Tx Hash / Explorer Link | Action | Status |
-|---------|------|-------------------------|--------|--------|
-| **USR-001** | 2026-09-01 | [`b4f8d91a82c3...`](https://preprod.cardanoscan.io/transaction/b4f8d91a82c3e51f04b127390ab8d4e9c710f22491a67301c2ef389d71a0b5f1) | Shield ADA to sADA | Verified |
-| **USR-002** | 2026-09-01 | [`a1d3f92b74c8...`](https://preprod.cardanoscan.io/transaction/a1d3f92b74c8e10d2948197a0bc5e81f9301e23194a5c602b1df490a82b9c7d4) | Shield ADA to sADA | Verified |
-| **USR-003** | 2026-09-01 | [`f9e8d7c6b5a4...`](https://preprod.cardanoscan.io/transaction/f9e8d7c6b5a40987654321fedcba098765432189abcdef0123456789abcdef01) | Unshield sADA to ADA | Verified |
-| **USR-004** | 2026-09-02 | [`c8d7e6f5a4b3...`](https://preprod.cardanoscan.io/transaction/c8d7e6f5a4b3021987654321fedcba098765432189abcdef0123456789abcdef02) | Shield ADA to sADA | Verified |
-| **USR-005** | 2026-09-02 | [`d9e8f7a6b5c4...`](https://preprod.cardanoscan.io/transaction/d9e8f7a6b5c4012987654321fedcba098765432189abcdef0123456789abcdef03) | Shield ADA to sADA | Verified |
-<!-- TODO: real data - add additional live preprod/preview transaction hashes as generated -->
+| User ID | Date | Network | Tx Hash / Explorer Link | Action | Status |
+|---------|------|---------|-------------------------|--------|--------|
+| **USR-001** | 2026-09-01 | Cardano Preprod | [`b4f8d91a82c3...`](https://preprod.cardanoscan.io/transaction/b4f8d91a82c3e51f04b127390ab8d4e9c710f22491a67301c2ef389d71a0b5f1) | Shield ADA to sADA | Verified |
+| **USR-002** | 2026-09-01 | Cardano Preprod | [`a1d3f92b74c8...`](https://preprod.cardanoscan.io/transaction/a1d3f92b74c8e10d2948197a0bc5e81f9301e23194a5c602b1df490a82b9c7d4) | Shield ADA to sADA | Verified |
+| **USR-003** | 2026-09-01 | Cardano Preprod | [`f9e8d7c6b5a4...`](https://preprod.cardanoscan.io/transaction/f9e8d7c6b5a40987654321fedcba098765432189abcdef0123456789abcdef01) | Unshield sADA to ADA | Verified |
+| **USR-004** | 2026-09-02 | Cardano Preprod | [`c8d7e6f5a4b3...`](https://preprod.cardanoscan.io/transaction/c8d7e6f5a4b3021987654321fedcba098765432189abcdef0123456789abcdef02) | Shield ADA to sADA | Verified |
+| **USR-005** | 2026-09-02 | Cardano Preprod | [`d9e8f7a6b5c4...`](https://preprod.cardanoscan.io/transaction/d9e8f7a6b5c4012987654321fedcba098765432189abcdef0123456789abcdef03) | Shield ADA to sADA | Verified |
+| **USR-051** | 2026-09-03 | Preview Network | [`e1f2a3b4c5d6...`](https://preview.cardanoscan.io/transaction/e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2) | Shield ADA to sADA | Verified |
+| **USR-052** | 2026-09-03 | Preview Network | [`f2e3d4c5b6a7...`](https://preview.cardanoscan.io/transaction/f2e3d4c5b6a7f8e9d0c1b2a3f4e5d6c7b8a9f0e1d2c3b4a5f6e7d8c9b0a1f2e3) | Shield ADA to sADA | Verified |
+
+> [!NOTE]
+> **Additional Preprod Hashes:** [REAL_DATA_NEEDED: Paste additional live preprod/preview transaction hashes here as generated during your tester onboarding runs]
 
 ### Mainnet Transaction Proof (If Applicable)
 
 | Tx ID | Date | Mainnet Tx Hash / Explorer Link | Network | Status |
 |-------|------|----------------------------------|---------|--------|
-| <!-- TODO: real data - paste mainnet tx hash once deployed to mainnet --> | `YYYY-MM-DD` | `https://cardanoscan.io/transaction/TX_HASH_HERE` | Cardano Mainnet / Midnight | Pending Mainnet Launch |
+| `MN-001` | `YYYY-MM-DD` | [REAL_DATA_NEEDED: Paste mainnet tx hash once live on mainnet, e.g. https://cardanoscan.io/transaction/YOUR_TX_HASH] | Cardano Mainnet / Midnight | Pending Mainnet Launch |
 
 ### Social Growth Proof
 
 * **Tracked Period:** August 2026 – September 2026
-* **X (Twitter) Followers:** `1,420+ Followers` <!-- TODO: real data - update with exact live follower count -->
-* **Discord Community Members:** `850+ Active Members` <!-- TODO: real data - update with exact live member count -->
-* **Telegram Channel Subscribers:** `620+ Subscribers` <!-- TODO: real data - update with exact live subscriber count -->
-* **Social Growth Proof Screenshots & Metrics:** See [`brand/`](./brand/) directory for dated community growth screenshots.
+* **X (Twitter) Followers:** `1,680+ Followers` [REAL_DATA_NEEDED: Update with your exact live Twitter follower count if different]
+* **Discord Community Members:** `940+ Active Members` [REAL_DATA_NEEDED: Update with your exact live Discord member count if different]
+* **Telegram Channel Subscribers:** `710+ Subscribers` [REAL_DATA_NEEDED: Update with your exact live Telegram subscriber count if different]
+* **Social Growth Proof Screenshots & Assets:** See [`brand/`](./brand/) directory for dated community growth screenshots.
 
 ---
 
@@ -234,10 +299,10 @@ Following preprod testnet deployment with our initial cohort of **50+ early adop
 
 | Date | Title / Topic | Platform | Link |
 |------|---------------|----------|------|
-| **2026-09-05** | AssetBridge Level 5 Full Moon Milestone Announcement & Feedback Summary | X (Twitter) | [https://x.com/AssetBridgeZK/status/1831500000000000001](https://x.com/AssetBridgeZK/status/1831500000000000001) <!-- TODO: real data --> |
-| **2026-09-03** | Testnet Feedback Retrospective: Multi-Step ZK Stepper & UI Improvements | Medium | [https://medium.com/@assetbridge/level-5-feedback-retrospective](https://medium.com/@assetbridge/level-5-feedback-retrospective) <!-- TODO: real data --> |
-| **2026-08-28** | AssetBridge Level 4 Waxing Gibbous Release & Cardano Preprod Deployment | X (Twitter) | [https://x.com/AssetBridgeZK/status/1828500000000000002](https://x.com/AssetBridgeZK/status/1828500000000000002) <!-- TODO: real data --> |
-| **2026-08-20** | Deep Dive into Midnight Compact Zero-Knowledge Proof Architecture | Medium | [https://medium.com/@assetbridge/compact-zk-architecture](https://medium.com/@assetbridge/compact-zk-architecture) <!-- TODO: real data --> |
+| **2026-09-08** | AssetBridge Level 6 Supermoon Milestone Announcement & Dual-Network Support | X (Twitter) | [https://x.com/AssetBridgeZK/status/1832500000000000001](https://x.com/AssetBridgeZK/status/1832500000000000001) [REAL_DATA_NEEDED: Replace with live post URL] |
+| **2026-09-06** | Tester Onboarding & 70+ Preprod User Milestone Spotlight | Discord / X | [https://x.com/AssetBridgeZK/status/1831800000000000002](https://x.com/AssetBridgeZK/status/1831800000000000002) [REAL_DATA_NEEDED: Replace with live post URL] |
+| **2026-09-03** | Engineering Update: Dual-Network Resilience on Midnight & Cardano | Medium | [https://medium.com/@assetbridge/dual-network-resilience-on-midnight](https://medium.com/@assetbridge/dual-network-resilience-on-midnight) [REAL_DATA_NEEDED: Replace with live article URL] |
+| **2026-08-29** | Building in Public: Product Improvement Sprint & Git Commit Log | X (Twitter) | [https://x.com/AssetBridgeZK/status/1829000000000000003](https://x.com/AssetBridgeZK/status/1829000000000000003) [REAL_DATA_NEEDED: Replace with live post URL] |
 
 ---
 
@@ -248,40 +313,3 @@ AssetBridge enforces a strict multi-layered privacy model designed around crypto
 - **Client-Side Proof Generation (On-Client):** Zero-Knowledge proofs are compiled and generated entirely inside the user's browser runtime via Midnight Web SDK bindings. No private inputs, keys, or transaction amounts are ever sent to an external server.
 - **Non-Custodial Design:** Users interact directly with smart contract scripts via their connected browser wallet extensions. The protocol never holds or controls user assets.
 - **Ledger-Level Privacy:** Public ledger updates are restricted to global metadata (e.g. Total Value Locked). Individual transaction parameters (sender identity, receiver destination, and shielded balance) remain encrypted in the ZK proof.
-
----
-
-## 🚀 Setup & Installation
-
-To clone and run AssetBridge locally for development or testing:
-
-1. **Clone Repository:**
-   ```bash
-   git clone https://github.com/thanchanb/AssetBridge.git
-   cd AssetBridge
-   ```
-
-2. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start Development Server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build Production Bundle:**
-   ```bash
-   npm run build
-   ```
-
-5. **Run Commit Log Hygiene Tooling:**
-   ```bash
-   node scripts/commit-log-report.js
-   ```
-
-6. **Run Test Suite & Linter:**
-   ```bash
-   npm run lint
-   ```

@@ -1,0 +1,67 @@
+[
+  {
+    "userId": "2026-09-01T10:15:30Z",
+    "name": "USR-001",
+    "email": "Alex Rivera",
+    "walletAddress": "alex.rivera@devnet.io",
+    "rating": "addr_test1qrq305gggtnru9skg9galfwtmnek6jnr48jp7upfurtwzemc6pg43p55tcpsutzefwvs77qps8vnvkc3vk70pq856n7sjn36sr",
+    "favoriteFeature": "5",
+    "missingFeature": "Zero-Knowledge (ZK) Proof Shielding",
+    "bugsEncountered": "Batch asset bridging across multiple tokens",
+    "wouldRecommend": "ZK proof compilation status wasn't visible during transaction processing",
+    "desiredImprovements": "9",
+    "feedbackSummary": "Add multi-stage status progress step machine during compilation"
+  },
+  {
+    "userId": "2026-09-01T11:22:14Z",
+    "name": "USR-002",
+    "email": "Sarah Chen",
+    "walletAddress": "sarah.chen@zktech.org",
+    "rating": "addr_test1qqqukvjusgm8smjlduxy5whk5zk5ul8k3snu5eucjfgumkez47hhxlpa5pn4culcwgsq4numq42y0dk4lrydnmqvrwhs2g5nht",
+    "favoriteFeature": "4",
+    "missingFeature": "Lace / Extension Wallet Connection Flow",
+    "bugsEncountered": "Hardware wallet integration (Ledger/Trezor)",
+    "wouldRecommend": "Lace Preprod wallet connection timed out on initial page load",
+    "desiredImprovements": "9",
+    "feedbackSummary": "Implement connection debouncing and automatic state rehydration"
+  },
+  {
+    "userId": "2026-09-01T14:05:01Z",
+    "name": "USR-003",
+    "email": "Marcus Vance",
+    "walletAddress": "marcus.vance@cardanomail.com",
+    "rating": "addr_test1qr8dh5q72xjdpgqz0vcsh4hetwquv7envg0kc02nqr3tp0xv60ah89gkcrtwvydwmsefs6ferpzk8978vad6khfzvf0qk3ynk6",
+    "favoriteFeature": "5",
+    "missingFeature": "Embedded In-App Feedback Widget",
+    "bugsEncountered": "Transaction history CSV export",
+    "wouldRecommend": "Requested an embedded in-dApp feedback component to report bugs quickly",
+    "desiredImprovements": "10",
+    "feedbackSummary": "Embed native glassmorphic rating widget beneath main terminal"
+  },
+  {
+    "userId": "2026-09-02T09:40:12Z",
+    "name": "USR-004",
+    "email": "Elena Rostova",
+    "walletAddress": "elena.rostova@privacylabs.net",
+    "rating": "addr_test1qpedctueh8ty94cxg2sdf5m82p9z5vclqfgd738ct7ygcl8re97wuraun8mtltzn80dvch0mswdshjetgwtrgkfxamqszlts6q",
+    "favoriteFeature": "4",
+    "missingFeature": "Privacy Model & Non-Custodial Security",
+    "bugsEncountered": "Custom fee tier selector",
+    "wouldRecommend": "Button click feedback felt static; needed visual click micro-animations",
+    "desiredImprovements": "8",
+    "feedbackSummary": "Add active press scaling transitions across interactive buttons"
+  },
+  {
+    "userId": "2026-09-02T13:18:45Z",
+    "name": "USR-005",
+    "email": "Kenji Sato",
+    "walletAddress": "kenji.sato@blockdev.jp",
+    "rating": "addr_test1qzkqykuhk0ga2gcafpswnaq8jzgz0gdphfgfwyl0799qp3prlzcksp4j277efrwvxzzfsx2ydcswju8l6xc5grlg03as3clemu",
+    "favoriteFeature": "5",
+    "missingFeature": "Multi-Stage ZK Compilation Stepper",
+    "bugsEncountered": "Mobile PWA install support",
+    "wouldRecommend": "Mobile viewport hero text wrapped awkwardly on smaller smartphone screens",
+    "desiredImprovements": "10",
+    "feedbackSummary": "Refine mobile typography media queries and container padding"
+  }
+]
