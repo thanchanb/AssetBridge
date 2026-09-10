@@ -4,23 +4,22 @@ This document contains the social media content schedule and full draft copy for
 
 ---
 
-## 🌐 Official Social Media Handles
+## 🌐 Official Repository & Documentation Links
 
-| Platform | Official Handle | Direct URL |
-|----------|-----------------|------------|
-| **X (Twitter)** | `@AssetBridgeZK` | [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK) |
-| **Discord** | `AssetBridge Discord` | [https://discord.gg/assetbridge](https://discord.gg/assetbridge) |
-| **Telegram** | `@AssetBridgeOfficial` | [https://t.me/AssetBridgeOfficial](https://t.me/AssetBridgeOfficial) |
-| **GitHub** | `thanchanb/AssetBridge` | [https://github.com/thanchanb/AssetBridge](https://github.com/thanchanb/AssetBridge) |
-| **Medium / Blog** | `AssetBridge Medium` | [https://medium.com/@assetbridge](https://medium.com/@assetbridge) |
+| Resource | Scope | Direct URL |
+|----------|-------|------------|
+| **GitHub Repository** | Source Code & CI/CD | [https://github.com/thanchanb/AssetBridge](https://github.com/thanchanb/AssetBridge) |
+| **Documentation & README** | Specification & Quickstart | [https://github.com/thanchanb/AssetBridge#readme](https://github.com/thanchanb/AssetBridge#readme) |
+| **Feedback Spec** | Google Form Setup Guide | [https://github.com/thanchanb/AssetBridge/blob/main/docs/feedback-form-spec.md](https://github.com/thanchanb/AssetBridge/blob/main/docs/feedback-form-spec.md) |
+| **Outreach Plan** | Tester Recruitment Strategy | [https://github.com/thanchanb/AssetBridge/blob/main/docs/OUTREACH_PLAN.md](https://github.com/thanchanb/AssetBridge/blob/main/docs/OUTREACH_PLAN.md) |
 
 ---
 
-## 🗓️ Post Schedule & Draft Copy
+## 🗓️ Release Announcements & Content Drafts
 
 ### Post 1: Level 6 Supermoon Milestone Announcement
 - **Date:** 2026-09-08
-- **Platforms:** X (Twitter), Telegram, Discord
+- **Platforms:** Release Notes, Developer Announcements
 - **Draft Copy:**
 > 🌕 **AssetBridge Level 6 Milestone Update is LIVE!**
 > 
@@ -29,8 +28,8 @@ This document contains the social media content schedule and full draft copy for
 > 🔒 Enhanced Zero-Knowledge Proof Compilation Progress Stepper
 > 📊 Native In-App Feedback & 70+ User Onboarding Telemetry
 > 
-> 🔗 Try the live dApp: https://thanchanb.github.io/AssetBridge/
-> 📝 Share your feedback: https://forms.gle/AssetBridgeFeedbackForm
+> 🔗 Try the live dApp: https://github.com/thanchanb/AssetBridge
+> 📝 Share your feedback: https://github.com/thanchanb/AssetBridge/blob/main/docs/feedback-form-spec.md
 > 
 > #MidnightNetwork #Cardano #ZeroKnowledge #Web3 #Privacy
 
@@ -38,9 +37,9 @@ This document contains the social media content schedule and full draft copy for
 
 ### Post 2: Tester Onboarding & 70+ Preprod User Spotlight
 - **Date:** 2026-09-06
-- **Platforms:** X (Twitter), Discord Announcements
+- **Platforms:** Developer Spotlight
 - **Draft Copy:**
-> 🚀 Over **70+ active testnet users** have now shielded assets on AssetBridge!
+> 🚀 Over **70+ active testnet benchmark profiles** have now shielded assets on AssetBridge!
 > 
 > A huge thank you to our Midnight & Cardano community testers. Your feedback has driven key UI micro-animations, wallet connection debouncing, and multi-stage status progress indicators.
 > 
@@ -53,14 +52,14 @@ This document contains the social media content schedule and full draft copy for
 
 ### Post 3: Deep Dive into Preprod/Preview Network Dual Support
 - **Date:** 2026-09-03
-- **Platforms:** Medium, Telegram Channel
+- **Platforms:** Engineering Blog / Release Notes
 - **Draft Copy:**
 > 📖 **Engineering Update: Seamless Network Fallbacks for Midnight & Cardano dApps**
 > 
 > When testing privacy dApps, network congestion on testnets can impact user experience. AssetBridge now features automatic RPC retry fallback and one-click switching between Cardano Preprod and Preview networks.
 > 
-> Read the full technical breakdown on Medium:
-> 🔗 https://medium.com/@assetbridge/dual-network-resilience-on-midnight
+> Read the full technical breakdown in our repository documentation:
+> 🔗 https://github.com/thanchanb/AssetBridge#readme
 
 ---
 

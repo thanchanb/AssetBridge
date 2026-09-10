@@ -84,7 +84,7 @@ This document contains the exact field specification to copy-paste into Google F
 
 ## 🔗 Setup Instructions for Admin
 
-1. Open [Google Forms](https://forms.google.com).
+1. Open Google Forms web portal in your browser.
 2. Click **Blank Form** and paste the title and description above.
 3. Add the 9 fields using the exact configurations detailed above.
 4. Click **Responses** tab ➔ **Link to Sheets** ➔ Create a new spreadsheet named `AssetBridge User Feedback Responses`.

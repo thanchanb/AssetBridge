@@ -13,4 +13,4 @@ The AssetBridge MVP (Preprod) currently supports the following branches:
 
 If you discover any security vulnerabilities in the Zero-Knowledge circuits or the smart contract integration, please do NOT report them via public GitHub issues. 
 
-Instead, contact the team directly via our [X Profile](https://x.com/AssetBridgeZK). We aim to respond within 24 hours.
+Instead, please report security concerns by creating a [Private Security Advisory](https://github.com/thanchanb/AssetBridge/security/advisories) or reaching out directly via GitHub repository maintainer channels. We aim to respond to security reports within 24 hours.

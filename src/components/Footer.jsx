@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, MessageCircle, MessageSquare } from 'lucide-react';
+import { Globe, MessageSquare } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -15,25 +15,20 @@ const Footer = () => {
           <div className="link-group">
             <h4>Product</h4>
             <a href="#">Bridge</a>
-            <a href="#">Explorer</a>
-            <a href="#">Ecosystem</a>
+            <a href="#feedback">Feedback</a>
           </div>
           <div className="link-group">
             <h4>Resources</h4>
-            <a href="#">Documentation</a>
-            <a href="#">Whitepaper</a>
-            <a href="#">GitHub</a>
+            <a href="https://github.com/thanchanb/AssetBridge#readme" target="_blank" rel="noopener noreferrer">Documentation</a>
+            <a href="https://github.com/thanchanb/AssetBridge" target="_blank" rel="noopener noreferrer">GitHub</a>
           </div>
         </div>
 
         <div className="footer-social">
-          <a href="https://x.com/AssetBridgeZK" target="_blank" rel="noreferrer" className="social-link">
-            <MessageCircle size={20} />
-          </a>
-          <a href="https://github.com/AssetBridge" target="_blank" rel="noreferrer" className="social-link">
+          <a href="https://github.com/thanchanb/AssetBridge" target="_blank" rel="noreferrer" className="social-link" title="GitHub Repository">
             <Globe size={20} />
           </a>
-          <a href="#" className="social-link">
+          <a href="#feedback" className="social-link" title="In-App Telemetry">
             <MessageSquare size={20} />
           </a>
         </div>

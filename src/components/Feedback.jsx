@@ -70,12 +70,12 @@ const Feedback = () => {
               </button>
 
               <a 
-                href="https://forms.gle/AssetBridgeFeedbackForm" 
+                href="https://github.com/thanchanb/AssetBridge/blob/main/docs/feedback-form-spec.md" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-outline"
               >
-                📋 Open Detailed Google Form
+                📋 Form Specification & Setup Guide
               </a>
             </div>
           </form>

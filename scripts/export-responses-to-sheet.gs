@@ -8,7 +8,7 @@
  * for exporting to .xlsx or CSV for repository documentation.
  * 
  * INSTRUCTIONS FOR SETUP:
- * 1. Open your Google Form: https://forms.google.com
+ * 1. Open your created Google Form in Google Drive.
  * 2. Click "Responses" tab -> Click the green "Link to Sheets" icon.
  * 3. In the connected Google Sheet, click "Extensions" -> "Apps Script".
  * 4. Replace any existing code in Code.gs with this file's contents.

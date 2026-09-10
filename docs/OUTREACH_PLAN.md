@@ -64,6 +64,6 @@ This document outlines the systematic community outreach, recruitment, and onboa
 1. **Install Wallet Extension:** Download [Lace Wallet](https://www.lace.io/) or Eternl.
 2. **Switch Network:** Toggle network setting to **Cardano Preprod** or **Preview Network**.
 3. **Get Faucet Test ADA:** Request test tokens via the [Cardano Preprod Faucet](https://docs.cardano.org/cardano-testnets/tools/faucet/).
-4. **Launch AssetBridge dApp:** Open [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/).
+4. **Launch AssetBridge dApp:** Open [https://github.com/thanchanb/AssetBridge](https://github.com/thanchanb/AssetBridge) and run `npm run dev`.
 5. **Execute Shielding Operation:** Bridge at least 5 tADA to sADA.
-6. **Submit Feedback:** Click the embedded feedback panel or open the [Public Google Form](https://forms.gle/AssetBridgeFeedbackForm) to record your ratings, feedback, and wallet address.
+6. **Submit Feedback:** Click the embedded feedback panel or view the [Google Form Specification](https://github.com/thanchanb/AssetBridge/blob/main/docs/feedback-form-spec.md) to record your ratings, feedback, and wallet address.
