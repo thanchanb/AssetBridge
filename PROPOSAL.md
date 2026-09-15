@@ -1,49 +1,22 @@
-# AssetBridge Supermoon Project Proposal & Architecture (Level 6)
+# AssetBridge — Project Architecture & Compact Circuit Specification (Level 5)
 
-AssetBridge is a next-generation, privacy-critical asset bridging protocol built to bridge assets securely while preserving transactional privacy. By leveraging **Midnight's Zero-Knowledge (ZK) technology stack**, AssetBridge shields transfer details (sender, receiver, and token values) from the public ledger, providing complete compliance-friendly privacy.
+AssetBridge is a privacy-preserving cross-chain asset bridging application built to demonstrate asset shielding using **Midnight's Zero-Knowledge (ZK) technology stack**.
 
----
+## Architecture Breakdown
 
-## 1. System Architecture
+1. **Compact Smart Contract (`contracts/AssetBridge.compact`)**: Written in Compact (Midnight's ZK domain-specific language), defining public ledger state (`tvl: Uint<32>`) and private witness circuit logic (`bridge_asset`).
+2. **TypeScript Contract Bindings (`managed/contract/index.js`)**: Compiled TypeScript bindings generated via the Compact compiler interface.
+3. **Vite + React Client Application (`src/`)**: A responsive UI interacting with the Midnight DApp connector API (`@midnight-ntwrk/dapp-connector-api`) and connected Lace wallet extensions.
 
-The AssetBridge architecture consists of three core layers:
-1.  **Compact Smart Contract (Private Logic)**: Written in Compact (Midnight's ZK language), defining what state is public, what state is private (witness), and what rules govern the transition.
-2.  **Generated Typescript Bindings (ZK client SDK)**: The compiled ZKIR (Zero-Knowledge Intermediate Representation) bindings that generate proof objects locally in the user's browser.
-3.  **Vite + React Client Application (User Interface)**: A premium glassmorphic frontend interacting with the Midnight DApp connector and Ethereum/Cardano wallets.
+## Data Flow Diagram
 
-```mermaid
-graph TD
-    A[React Front-End UI] -->|User Input: Amount| B[Compact Client SDK Bindings]
-    B -->|Generate ZK Proof locally| C[Midnight Wallet Connector]
-    C -->|Submit Shielded Transaction| D[Midnight Preprod Network]
-    D -->|Update Public State: TVL| E[AssetBridge Ledger State]
+```
+[ User Input ] ➔ [ Local State / Witness ] ➔ [ Midnight Wallet Connector ] ➔ [ Midnight Preprod Network ]
 ```
 
----
+## Level 5 MVP Features Deployed
 
-## 2. Zero-Knowledge Circuit Logic
-
-The privacy mechanism is defined in [AssetBridge.compact](file:///Users/thanchanbhumij/AssetBridge/contracts/AssetBridge.compact):
-
-*   **Public Ledger State**: `tvl` (Total Value Locked). The smart contract must maintain the cumulative value of bridged assets to verify liquidity integrity.
-*   **Private Witness Data**: The `amount` being bridged by the user.
-*   **Ledger State Transition**:
-    ```compact
-    export ledger tvl: Uint<32>;
-
-    export circuit bridge_asset(amount: Uint<32>): [] {
-        // The amount is provided as a private witness.
-        // We explicitly disclose it to the public ledger state to update the total bridged value.
-        tvl = (tvl + disclose(amount)) as Uint<32>;
-    }
-    ```
-*   **Disclose Operator**: The `disclose(amount)` command exposes the bridging value to the blockchain to increments the `tvl` state. However, the *sender's address* and the *private witness keys* remain completely unrevealed inside the ZK proof boundary, securing user anonymity.
-
----
-
-## 3. Supermoon Scope & Deployed Features
-
-During the Supermoon phase (Level 6), we successfully deployed the following features to Preprod:
-*   **Client-side ZK-Proof Generation**: Fully integrated the compact runtime to compile and generate proofs on the client side, eliminating any dependency on centralized servers.
-*   **EVM-Cardano Handshake**: Setup the wallet connection schema enabling simultaneous connection to Ethereum wallet extension (e.g. MetaMask) and Cardano Preprod wallet.
-*   **In-App Feedback loop**: Native review loop system directly updating project logs and telemetry.
+- **Bridging Terminal UI:** Asset selection, quantity inputs, and ZK proof progress loader (`Bridge.jsx`).
+- **Network Switcher Badge:** Network environment indicator (`Header.jsx`).
+- **In-App Feedback Widget:** Embedded 5-star rating and user telemetry form (`Feedback.jsx`).
+- **Compact Contract Spec:** Declarative privacy model specifying public disclosures and witness encapsulation (`contracts/AssetBridge.compact`).

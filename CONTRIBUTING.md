@@ -1,6 +1,6 @@
 # Contributing to AssetBridge
 
-We welcome contributions from the Web3 community! As part of the Supermoon phase, we are opening up our development process.
+We welcome contributions from the Web3 community! As part of the Midnight Level 5 Full Moon phase, we are opening up our development process.
 
 ## How to Contribute
 

@@ -1,5 +1,5 @@
 /**
- * AssetBridge Level 6 User Onboarding & Feedback Export Script
+ * AssetBridge Level 5 User Onboarding & Feedback Export Script
  * Parses user responses, formats CSV/JSON telemetry, and outputs clean submission data.
  */
 
@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 const CSV_FILE = path.join(__dirname, '../feedback/responses-template.csv');
 const OUTPUT_JSON = path.join(__dirname, '../feedback/responses-export.json');
 
-console.log('🔄 AssetBridge Feedback Data Pipeline - Exporting Level 6 Telemetry...');
+console.log('🔄 AssetBridge Feedback Data Pipeline - Exporting Level 5 Telemetry...');
 
 if (fs.existsSync(CSV_FILE)) {
   const content = fs.readFileSync(CSV_FILE, 'utf-8');

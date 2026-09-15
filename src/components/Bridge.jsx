@@ -24,21 +24,28 @@ const Bridge = () => {
       
       // 2. In a fully configured DApp, we initialize the MidnightProvider and ZK proof server.
       // const providers = await configureProviders(walletApi);
-      // const contractAddress = 'addr_test1...'; // Replace with actual deployment address
+      // const contractAddress = 'mn_preprod...'; // Midnight Preprod contract deployment address
       
       // 3. Bind UI actions to trigger actual Compact circuit execution
       // const contract = new Contract(providers, contractAddress);
       // const tx = await contract.circuits.bridge_asset(BigInt(Math.floor(parseFloat(amount) * 1e6)));
       
-      // Simulate successful network tx submission using actual wallet API connection state
-      const state = await walletApi.state();
-      const realTxHash = state.address ? `tx_${state.address.substring(0, 10)}_preprod` : 'pending_tx';
+      // Execute transaction state machine with Midnight Preprod transaction formatting
+      let userAddr = 'mn_preprod_tester';
+      try {
+        const state = await walletApi.state();
+        if (state && state.address) userAddr = state.address;
+      } catch {
+        // Fallback for simulation mode
+      }
+      
+      const realTxHash = `mn_tx_${userAddr.substring(0, 8)}_${Date.now().toString(36)}`;
       
       setStatus('success');
       setTxHash(realTxHash);
     } catch (error) {
       console.error("Bridge Error:", error);
-      alert(error.message || "Failed to bridge assets. Ensure Lace is connected to Preprod.");
+      alert(error.message || "Failed to bridge assets. Ensure Lace is connected to Midnight Preprod.");
       setStatus('idle');
     }
   };
@@ -75,7 +82,7 @@ const Bridge = () => {
         </div>
 
         <div className="input-group">
-          <label>To: Midnight Network (Shielded)</label>
+          <label>To: Midnight Network (Shielded Compact ZK)</label>
           <div className="input-box">
             <input 
               type="number" 
@@ -93,7 +100,7 @@ const Bridge = () => {
         {status === 'idle' && (
           <div className="privacy-notice">
             <ShieldAlert size={16} className="text-primary" />
-            <span>Transactions are shielded using Zero-Knowledge proofs.</span>
+            <span>Transactions are shielded using Midnight Zero-Knowledge proofs.</span>
           </div>
         )}
 
@@ -109,18 +116,22 @@ const Bridge = () => {
           <div className="tx-status-box">
             <div className={`status-step ${status === 'generating' || status === 'confirming' || status === 'success' ? 'active' : ''}`}>
               {status === 'generating' ? <Loader2 className="spin" size={18} /> : <CheckCircle2 size={18} />}
-              <span>Generating ZK Proof</span>
+              <span>Generating ZK Proof (Compact DSL)</span>
             </div>
             <div className={`status-step ${status === 'confirming' || status === 'success' ? 'active' : ''} ${status === 'generating' ? 'pending' : ''}`}>
               {status === 'confirming' ? <Loader2 className="spin" size={18} /> : (status === 'success' ? <CheckCircle2 size={18} /> : <div className="dot"></div>)}
-              <span>Confirming on Preprod</span>
+              <span>Confirming on Midnight Preprod</span>
             </div>
             
             {status === 'success' && (
-              <div className="success-message animate-fade-in">
-                <p>Bridge Successful!</p>
-                <a href={`https://preprod.cardanoscan.io/transaction/${txHash}`} target="_blank" rel="noreferrer" className="tx-link">
-                  View TX: {txHash.substring(0, 10)}...
+              <div className="success-message animate-fade-in" style={{ textAlign: 'center', marginTop: '1rem' }}>
+                <p style={{ color: '#22c55e', fontWeight: 'bold', fontSize: '1.1rem' }}>⚡ Client MVP Bridge Simulation Complete!</p>
+                <p style={{ fontSize: '0.85rem', color: '#9ca3af', margin: '0.25rem 0' }}>Demo Activity ID: <code>{txHash}</code></p>
+                <p style={{ fontSize: '0.75rem', color: '#6b7280', margin: '0.25rem 0' }}>
+                  (Note: Proof compilation & transaction confirmation are simulated in client runtime)
+                </p>
+                <a href="#feedback" className="btn btn-outline" style={{ display: 'inline-block', marginTop: '0.75rem', fontSize: '0.85rem' }}>
+                  📝 Submit Tester Feedback Below
                 </a>
               </div>
             )}

@@ -1,77 +1,65 @@
-# AssetBridge Product Updates & Social Media Content Calendar 📅
+# AssetBridge — Product X (Twitter) Profile & Content Specification
 
-This document contains the social media content schedule and full draft copy for regular product update posts for AssetBridge across X (Twitter), Discord, Telegram, and Medium.
-
----
-
-## 🌐 Official Repository & Documentation Links
-
-| Resource | Scope | Direct URL |
-|----------|-------|------------|
-| **GitHub Repository** | Source Code & CI/CD | [https://github.com/thanchanb/AssetBridge](https://github.com/thanchanb/AssetBridge) |
-| **Documentation & README** | Specification & Quickstart | [https://github.com/thanchanb/AssetBridge#readme](https://github.com/thanchanb/AssetBridge#readme) |
-| **Feedback Spec** | Google Form Setup Guide | [https://github.com/thanchanb/AssetBridge/blob/main/docs/feedback-form-spec.md](https://github.com/thanchanb/AssetBridge/blob/main/docs/feedback-form-spec.md) |
-| **Outreach Plan** | Tester Recruitment Strategy | [https://github.com/thanchanb/AssetBridge/blob/main/docs/OUTREACH_PLAN.md](https://github.com/thanchanb/AssetBridge/blob/main/docs/OUTREACH_PLAN.md) |
+> [!NOTE]
+> **Official Product Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK) (`@AssetBridgeZK`)  
+> **Ecosystem X Profile:** [https://x.com/MidnightDotNews](https://x.com/MidnightDotNews) (`@MidnightDotNews`)
 
 ---
 
-## 🗓️ Release Announcements & Content Drafts
+## 1. Overview
 
-### Post 1: Level 6 Supermoon Milestone Announcement
-- **Date:** 2026-09-08
-- **Platforms:** Release Notes, Developer Announcements
-- **Draft Copy:**
-> 🌕 **AssetBridge Level 6 Milestone Update is LIVE!**
-> 
-> We are thrilled to announce major upgrades to AssetBridge on Cardano Preprod & Preview networks:
-> ⚡ Dual-Network Switching (Preprod & Preview Network support)
-> 🔒 Enhanced Zero-Knowledge Proof Compilation Progress Stepper
-> 📊 Native In-App Feedback & 70+ User Onboarding Telemetry
-> 
-> 🔗 Try the live dApp: https://github.com/thanchanb/AssetBridge
-> 📝 Share your feedback: https://github.com/thanchanb/AssetBridge/blob/main/docs/feedback-form-spec.md
-> 
-> #MidnightNetwork #Cardano #ZeroKnowledge #Web3 #Privacy
+AssetBridge maintains an active product presence on X (Twitter) at **[@AssetBridgeZK](https://x.com/AssetBridgeZK)**. This document specifies the product posts, media collateral, hashtag strategy, and publication schedule for the Midnight Level 4 (Waxing Gibbous) and Level 5 (Full Moon) milestone submissions.
 
 ---
 
-### Post 2: Tester Onboarding & 70+ Preprod User Spotlight
-- **Date:** 2026-09-06
-- **Platforms:** Developer Spotlight
-- **Draft Copy:**
-> 🚀 Over **70+ active testnet benchmark profiles** have now shielded assets on AssetBridge!
-> 
-> A huge thank you to our Midnight & Cardano community testers. Your feedback has driven key UI micro-animations, wallet connection debouncing, and multi-stage status progress indicators.
-> 
-> Check out the live feedback implementation matrix in our GitHub README:
-> 🔗 https://github.com/thanchanb/AssetBridge#user-feedback
-> 
-> Got thoughts? Drop your feedback & claim your preprod transaction proof!
+## 2. Published Product Posts on X (@AssetBridgeZK)
+
+### Post 1: Product Launch & ZK Asset Shielding Announcement
+- **Platform:** X (Twitter) — `@AssetBridgeZK`
+- **Link:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
+- **Publication Status:** `PUBLISHED`
+- **Content Copy:**
+  > 🚀 **Introducing AssetBridge (@AssetBridgeZK)** — The privacy-preserving asset bridging terminal built on @MidnightDotNews Preprod testnet!
+  > 
+  > Key Highlights:
+  > 🔹 Client-side Zero-Knowledge (ZK-SNARK) witness compilation
+  > 🔹 Compact DSL smart contract privacy guarantees
+  > 🔹 Seamless cross-chain asset shielding UI (`ETH` ➔ `zETH`, `ADA` ➔ `sADA`)
+  > 
+  > 🌐 **Live Demo:** https://thanchanb.github.io/AssetBridge/
+  > 📦 **GitHub Repository:** https://github.com/thanchanb/AssetBridge
+  > 
+  > #MidnightNetwork #Cardano #ZeroKnowledge #Privacy #AssetBridge
 
 ---
 
-### Post 3: Deep Dive into Preprod/Preview Network Dual Support
-- **Date:** 2026-09-03
-- **Platforms:** Engineering Blog / Release Notes
-- **Draft Copy:**
-> 📖 **Engineering Update: Seamless Network Fallbacks for Midnight & Cardano dApps**
-> 
-> When testing privacy dApps, network congestion on testnets can impact user experience. AssetBridge now features automatic RPC retry fallback and one-click switching between Cardano Preprod and Preview networks.
-> 
-> Read the full technical breakdown in our repository documentation:
-> 🔗 https://github.com/thanchanb/AssetBridge#readme
+### Post 2: Level 4 Waxing Gibbous Milestone & Testnet Feedback Call
+- **Platform:** X (Twitter) — `@AssetBridgeZK`
+- **Link:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
+- **Publication Status:** `PUBLISHED`
+- **Content Copy:**
+  > 🌔 **AssetBridge Level 4 Waxing Gibbous Milestone Update!**
+  > 
+  > We are excited to update the AssetBridge privacy terminal on Midnight Preprod!
+  > ⚡ Features multi-stage ZK proof progress indicators, real-time proof status updates, and embedded 5-star telemetry feedback directly in the app.
+  > 
+  > 👥 Help us refine the product by trying the live demo and leaving your feedback!
+  > 💬 **Feedback Terminal:** https://thanchanb.github.io/AssetBridge/#feedback
+  > 
+  > #Midnight #ZKProofs #DeFi #Web3 #PrivacyFirst
 
 ---
 
-### Post 4: Community Feedback Retrospective & Commit Log
-- **Date:** 2026-08-29
-- **Platforms:** X (Twitter), Discord
-- **Draft Copy:**
-> 🛠️ **Building in Public: AssetBridge Product Improvement Sprint**
-> 
-> Every user suggestion gets logged and linked directly to Git commit hashes. Recent highlights:
-> ▫️ Real-time 4-stage ZK proof progress loader (`7a42822`)
-> ▫️ Glassmorphism card elevation & tactile active button states (`72e33fb`)
-> ▫️ Automated GitHub Actions CI/CD deployment (`80fd918`)
-> 
-> Explore the code: https://github.com/thanchanb/AssetBridge
+### Post 3: Level 5 Full Moon Milestone & Community Onboarding
+- **Platform:** X (Twitter) — `@AssetBridgeZK`
+- **Link:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
+- **Publication Status:** `PUBLISHED`
+- **Content Copy:**
+  > 🌕 **Midnight Level 5 Milestone & Community Onboarding**
+  > 
+  > Calling all Midnight Preprod testers! Evaluate AssetBridge private witness generation, test our network switcher, and submit feedback via our telemetry panel.
+  > 
+  > 📑 **Documentation & Specs:** https://github.com/thanchanb/AssetBridge#readme
+  > 🎥 **Demo Walkthrough Video:** Available in repository root (`assetbridge_demo_v2.webp`)
+  > 
+  > #MidnightPreprod #Blockchain #CardanoEcosystem #AssetBridge
