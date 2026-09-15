@@ -7,23 +7,26 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.x'
-    - run: npm install
-    - name: Install Compact Compiler (Mock/Simulate)
-      run: |
-        # In a real environment, you'd download the compact compiler here.
-        # Assuming compact compiler binary is installed or pre-built in CI environment
-        echo "Compact compiler step simulator"
-    - name: Compile Compact Contract
-      run: compact compile contracts/AssetBridge.compact managed/ || echo "Compilation skipped if compact not found in CI"
-    - name: Run Test Suite
-      run: npx vitest run
-    - name: Build Frontend
-      run: npm run build
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run test suite
+        run: npm test
+
+      - name: Build frontend bundle
+        run: npm run build
