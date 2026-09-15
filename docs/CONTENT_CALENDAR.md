@@ -1,25 +1,25 @@
 # AssetBridge — Product X (Twitter) Profile & Content Specification
 
 > [!NOTE]
-> **Official Product Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK) (`@AssetBridgeZK`)  
+> **Official Creator & Product Profile:** [https://x.com/ThanchanB](https://x.com/ThanchanB) (`@ThanchanB`)  
 > **Ecosystem X Profile:** [https://x.com/MidnightDotNews](https://x.com/MidnightDotNews) (`@MidnightDotNews`)
 
 ---
 
 ## 1. Overview
 
-AssetBridge maintains an active product presence on X (Twitter) at **[@AssetBridgeZK](https://x.com/AssetBridgeZK)**. This document specifies the product posts, media collateral, hashtag strategy, and publication schedule for the Midnight Level 4 (Waxing Gibbous) and Level 5 (Full Moon) milestone submissions.
+AssetBridge maintains an active product presence on X (Twitter) under **[@ThanchanB](https://x.com/ThanchanB)** (Thanchan Bhumij). This document specifies the product announcements, content copy, media references, and post specifications for the Midnight Level 4 (Waxing Gibbous) and Level 5 (Full Moon) milestone submissions.
 
 ---
 
-## 2. Published Product Posts on X (@AssetBridgeZK)
+## 2. Product Announcement & Content Specifications
 
 ### Post 1: Product Launch & ZK Asset Shielding Announcement
-- **Platform:** X (Twitter) — `@AssetBridgeZK`
-- **Link:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
-- **Publication Status:** `PUBLISHED`
+- **Platform:** X (Twitter) — `@ThanchanB`
+- **Profile Link:** [https://x.com/ThanchanB](https://x.com/ThanchanB)
+- **Target Channels:** X (Twitter), Midnight Developer Community
 - **Content Copy:**
-  > 🚀 **Introducing AssetBridge (@AssetBridgeZK)** — The privacy-preserving asset bridging terminal built on @MidnightDotNews Preprod testnet!
+  > 🚀 **Introducing AssetBridge** — The privacy-preserving asset bridging terminal built on @MidnightDotNews Preprod testnet!
   > 
   > Key Highlights:
   > 🔹 Client-side Zero-Knowledge (ZK-SNARK) witness compilation
@@ -28,15 +28,16 @@ AssetBridge maintains an active product presence on X (Twitter) at **[@AssetBrid
   > 
   > 🌐 **Live Demo:** https://thanchanb.github.io/AssetBridge/
   > 📦 **GitHub Repository:** https://github.com/thanchanb/AssetBridge
+  > 👤 **Profile:** https://x.com/ThanchanB
   > 
   > #MidnightNetwork #Cardano #ZeroKnowledge #Privacy #AssetBridge
 
 ---
 
 ### Post 2: Level 4 Waxing Gibbous Milestone & Testnet Feedback Call
-- **Platform:** X (Twitter) — `@AssetBridgeZK`
-- **Link:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
-- **Publication Status:** `PUBLISHED`
+- **Platform:** X (Twitter) — `@ThanchanB`
+- **Profile Link:** [https://x.com/ThanchanB](https://x.com/ThanchanB)
+- **Target Channels:** X (Twitter), Cardano Community
 - **Content Copy:**
   > 🌔 **AssetBridge Level 4 Waxing Gibbous Milestone Update!**
   > 
@@ -45,15 +46,16 @@ AssetBridge maintains an active product presence on X (Twitter) at **[@AssetBrid
   > 
   > 👥 Help us refine the product by trying the live demo and leaving your feedback!
   > 💬 **Feedback Terminal:** https://thanchanb.github.io/AssetBridge/#feedback
+  > 👤 **Profile:** https://x.com/ThanchanB
   > 
   > #Midnight #ZKProofs #DeFi #Web3 #PrivacyFirst
 
 ---
 
 ### Post 3: Level 5 Full Moon Milestone & Community Onboarding
-- **Platform:** X (Twitter) — `@AssetBridgeZK`
-- **Link:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK)
-- **Publication Status:** `PUBLISHED`
+- **Platform:** X (Twitter) — `@ThanchanB`
+- **Profile Link:** [https://x.com/ThanchanB](https://x.com/ThanchanB)
+- **Target Channels:** X (Twitter), Midnight Testnet Testers
 - **Content Copy:**
   > 🌕 **Midnight Level 5 Milestone & Community Onboarding**
   > 

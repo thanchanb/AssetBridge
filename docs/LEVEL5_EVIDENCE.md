@@ -8,7 +8,7 @@ This document consolidates all submission evidence for the **AssetBridge** proje
 
 - **Project Name:** AssetBridge
 - **Milestone Targets:** Midnight Level 4 (Waxing Gibbous) & Level 5 (Full Moon)
-- **Product X Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK) (`@AssetBridgeZK`)
+- **Product X Profile:** [https://x.com/ThanchanB](https://x.com/ThanchanB) (`@ThanchanB`)
 - **GitHub Repository:** [https://github.com/thanchanb/AssetBridge](https://github.com/thanchanb/AssetBridge)
 - **Live Demo URL:** [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/)
 - **Demo Video Asset:** [`assetbridge_demo_v2.webp`](file:///Users/thanchanbhumij/AssetBridge/assetbridge_demo_v2.webp)
@@ -19,7 +19,7 @@ This document consolidates all submission evidence for the **AssetBridge** proje
 
 | Requirement | Status | Evidence Summary & Links |
 | ----------- | ------ | ------------------------ |
-| **Product X Profile Link & Posted Content** | `PASS` | Official product X profile link [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK) (`@AssetBridgeZK`) and product content posts added to [`README.md`](../README.md), [`src/components/Footer.jsx`](../src/components/Footer.jsx), and [`docs/CONTENT_CALENDAR.md`](./CONTENT_CALENDAR.md). |
+| **Product X Profile Link & Posted Content** | `PASS` | Official product X profile link [https://x.com/ThanchanB](https://x.com/ThanchanB) (`@ThanchanB`) and product content posts added to [`README.md`](../README.md), [`src/components/Footer.jsx`](../src/components/Footer.jsx), and [`docs/CONTENT_CALENDAR.md`](./CONTENT_CALENDAR.md). |
 | **Same MVP from Level 4, extended** | `PASS` | Extended core Level 4 bridging MVP with embedded rating/feedback widget ([`src/components/Feedback.jsx`](../src/components/Feedback.jsx)), proof progress loader ([`src/components/Bridge.jsx`](../src/components/Bridge.jsx)), and Compact smart contract interface ([`contracts/AssetBridge.compact`](../contracts/AssetBridge.compact)). |
 | **50 Preprod users** | `NEEDS REAL-WORLD ACTION` | Currently `0/50` verified genuine Midnight Preprod testers. Fictitious benchmark profiles removed to preserve submission integrity. See [`docs/PREPROD_USERS.md`](./PREPROD_USERS.md). |
 | **Verifiable wallet addresses for those users** | `NEEDS REAL-WORLD ACTION` | Requires real-world Midnight Preprod testing to log genuine user wallet addresses. Fictitious Cardano testnet addresses purged. See [`docs/PREPROD_USERS.md`](./PREPROD_USERS.md). |

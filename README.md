@@ -3,7 +3,7 @@
 [![CI/CD Pipeline](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml/badge.svg)](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml)
 [![Milestone Level 4](https://img.shields.io/badge/Milestone-Midnight%20Level%204%20--%20Waxing%20Gibbous-blue.svg)](https://github.com/thanchanb/AssetBridge)
 [![Milestone Level 5](https://img.shields.io/badge/Milestone-Midnight%20Level%205%20--%20Full%20Moon-purple.svg)](https://github.com/thanchanb/AssetBridge)
-[![Product X Profile](https://img.shields.io/badge/Product%20X%20Profile-@AssetBridgeZK-1DA1F2.svg?logo=x)](https://x.com/AssetBridgeZK)
+[![Product X Profile](https://img.shields.io/badge/Product%20X%20Profile-@ThanchanB-1DA1F2.svg?logo=x)](https://x.com/ThanchanB)
 [![Commits](https://img.shields.io/badge/Commits-46%20Total%20--%2028%20Meaningful-blue.svg)](./docs/COMMIT_AUDIT.md)
 [![Build & Test](https://img.shields.io/badge/Tests-100%25%20Passing-success.svg)](./tests/AssetBridge.test.ts)
 
@@ -15,7 +15,7 @@ AssetBridge is an open-source privacy-preserving asset bridging application engi
 
 AssetBridge provides a streamlined terminal interface for shielding assets using Midnight's Compact smart contract framework and Zero-Knowledge cryptography.
 
-- **Product X Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK) (`@AssetBridgeZK`)
+- **Product / Creator X Profile:** [https://x.com/ThanchanB](https://x.com/ThanchanB) (`@ThanchanB`)
 - **Midnight Ecosystem X Channel:** [https://x.com/MidnightDotNews](https://x.com/MidnightDotNews) (`@MidnightDotNews`)
 - **Milestone Submissions:** Midnight Level 4 (Waxing Gibbous) & Level 5 (Full Moon)
 - **Target Network:** Midnight Preprod Testnet
@@ -27,10 +27,10 @@ AssetBridge provides a streamlined terminal interface for shielding assets using
 
 ## 2. Product X (Twitter) Profile & Content Posts
 
-AssetBridge maintains an official product page on X (Twitter) at **[@AssetBridgeZK](https://x.com/AssetBridgeZK)**. Below are the product announcements and content posts published on our official product page:
+AssetBridge maintains an official creator and product profile on X (Twitter) at **[@ThanchanB](https://x.com/ThanchanB)**. Below are the product announcements and content posts for the AssetBridge protocol:
 
 ### 📌 Post 1: Product Launch & ZK Asset Shielding Announcement
-> 🚀 **Introducing AssetBridge (@AssetBridgeZK)** — The privacy-preserving asset bridging terminal built on @MidnightDotNews Preprod testnet!
+> 🚀 **Introducing AssetBridge** — The privacy-preserving asset bridging terminal built on @MidnightDotNews Preprod testnet!
 > 
 > Key Highlights:
 > 🔹 Client-side Zero-Knowledge (ZK-SNARK) witness compilation
@@ -39,6 +39,7 @@ AssetBridge maintains an official product page on X (Twitter) at **[@AssetBridge
 > 
 > 🌐 **Live Demo:** [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/)
 > 📦 **GitHub Repository:** [https://github.com/thanchanb/AssetBridge](https://github.com/thanchanb/AssetBridge)
+> 👤 **Product Profile:** [https://x.com/ThanchanB](https://x.com/ThanchanB)
 > 
 > #MidnightNetwork #Cardano #ZeroKnowledge #Privacy #AssetBridge
 
@@ -52,6 +53,7 @@ AssetBridge maintains an official product page on X (Twitter) at **[@AssetBridge
 > 
 > 👥 Help us refine the product by trying the live demo and leaving your feedback!
 > 💬 **Feedback Terminal:** [https://thanchanb.github.io/AssetBridge/#feedback](https://thanchanb.github.io/AssetBridge/#feedback)
+> 👤 **Creator X Profile:** [https://x.com/ThanchanB](https://x.com/ThanchanB)
 > 
 > #Midnight #ZKProofs #DeFi #Web3 #PrivacyFirst
 

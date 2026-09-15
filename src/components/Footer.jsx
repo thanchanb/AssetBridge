@@ -22,7 +22,7 @@ const Footer = () => {
             <h4>Product</h4>
             <a href="#">Bridge</a>
             <a href="#feedback">Feedback</a>
-            <a href="https://x.com/AssetBridgeZK" target="_blank" rel="noopener noreferrer">Product X Profile</a>
+            <a href="https://x.com/ThanchanB" target="_blank" rel="noopener noreferrer">Product X Profile</a>
           </div>
           <div className="link-group">
             <h4>Resources</h4>
@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-social">
-          <a href="https://x.com/AssetBridgeZK" target="_blank" rel="noopener noreferrer" className="social-link" title="Product X (@AssetBridgeZK)">
+          <a href="https://x.com/ThanchanB" target="_blank" rel="noopener noreferrer" className="social-link" title="Product X Profile (@ThanchanB)">
             <XIcon size={18} />
           </a>
           <a href="https://github.com/thanchanb/AssetBridge" target="_blank" rel="noreferrer" className="social-link" title="GitHub Repository">
