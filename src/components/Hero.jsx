@@ -1,43 +1,32 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Lock } from 'lucide-react';
 import ThreeCanvas from './ThreeCanvas';
-import './Hero.css';
 
 const Hero = () => {
   return (
-    <section className="hero container animate-fade-in" style={{ animationDelay: '0.2s' }}>
-      <ThreeCanvas />
-      
-      <div className="hero-content">
-        <div className="badge">
-          <ShieldCheck size={16} className="badge-icon" />
-          <span>Zero-Knowledge Privacy Core</span>
-          <span className="badge-dot"></span>
+    <section className="hero">
+      <div className="hero-grid">
+        <div>
+          <div className="hero-tag">◐ Zero-knowledge, by default</div>
+          <h1>Bridge assets<br /><em>into the dark.</em></h1>
+          <p className="sub">
+            ETH and ADA go in. Shielded zETH and sADA come out. Everything in between — 
+            your balance, your address, your history — stays in your private state, 
+            proven but never revealed.
+          </p>
+          <div className="hero-ctas">
+            <a href="#bridge" className="btn btn-primary">Open the bridge</a>
+            <a 
+              href="https://github.com/thanchanb/AssetBridge#readme" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-ghost"
+            >
+              Read the contract
+            </a>
+          </div>
         </div>
-        
-        <h1 className="hero-title">
-          Bridge Assets with <br />
-          <span className="text-primary-gradient">Absolute Privacy</span>
-        </h1>
-        
-        <p className="hero-subtitle">
-          AssetBridge leverages client-side ZK-SNARK witness compilation on the 
-          <strong> Midnight Network</strong> to ensure your cross-chain asset parameters 
-          remain completely confidential.
-        </p>
-
-        <div className="hero-actions">
-          <a href="#bridge" className="btn btn-primary btn-large">
-            Start Bridging <ArrowRight size={20} />
-          </a>
-          <a 
-            href="https://github.com/thanchanb/AssetBridge#readme" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-outline btn-large"
-          >
-            <Lock size={18} /> Protocol Specs
-          </a>
+        <div className="hero-visual" id="orbHost">
+          <ThreeCanvas />
         </div>
       </div>
     </section>
