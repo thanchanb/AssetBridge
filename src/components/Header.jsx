@@ -1,31 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Wallet, Shield } from 'lucide-react';
+import { useWallet } from '../context/WalletContext';
 import './Header.css';
 
+const formatAddress = (addr) => {
+  if (!addr) return '';
+  const str = typeof addr === 'string' ? addr : (addr?.address || addr?.unshieldedAddress || String(addr));
+  return str.length > 12 ? `${str.slice(0, 8)}...${str.slice(-4)}` : str;
+};
+
 const Header = () => {
-  const [connected, setConnected] = useState(false);
-  const [walletAddress, setWalletAddress] = useState('');
+  const { connected, connecting, walletAddress, walletError, connect, disconnect, clearError } = useWallet();
 
-  const handleConnectWallet = async () => {
+  const handleToggleWallet = () => {
     if (connected) {
-      setConnected(false);
-      setWalletAddress('');
-      return;
-    }
-
-    try {
-      if (window.midnight && window.midnight.mnLace) {
-        const api = await window.midnight.mnLace.enable();
-        const state = await api.state();
-        const addr = state.address ? `${state.address.substring(0, 10)}...${state.address.substring(state.address.length - 4)}` : 'mn_preprod...976f';
-        setWalletAddress(addr);
-      } else {
-        setWalletAddress('mn_preprod...976f');
-      }
-      setConnected(true);
-    } catch {
-      setWalletAddress('mn_preprod...976f');
-      setConnected(true);
+      disconnect();
+    } else {
+      connect();
     }
   };
 
@@ -52,13 +43,52 @@ const Header = () => {
             ⚡ Midnight Preprod
           </div>
 
-          <button 
-            className={`btn ${connected ? 'btn-outline' : 'btn-primary'}`}
-            onClick={handleConnectWallet}
-          >
-            <Wallet size={18} />
-            {connected ? walletAddress : 'Connect Lace Wallet'}
-          </button>
+          <div className="wallet-connector-wrapper" style={{ position: 'relative' }}>
+            <button 
+              className={`btn ${connected ? 'btn-outline' : 'btn-primary'}`}
+              onClick={handleToggleWallet}
+              disabled={connecting}
+            >
+              <Wallet size={18} />
+              {connecting 
+                ? 'Connecting Lace...' 
+                : connected 
+                  ? formatAddress(walletAddress) 
+                  : 'Connect Lace Wallet'}
+            </button>
+            {walletError && (
+              <div 
+                className="wallet-error-tooltip"
+                role="alert"
+                style={{
+                  position: 'absolute',
+                  top: 'calc(100% + 8px)',
+                  right: 0,
+                  background: '#1a1012',
+                  border: '1px solid #ef4444',
+                  color: '#fca5a5',
+                  fontSize: '0.75rem',
+                  padding: '0.5rem 0.75rem',
+                  borderRadius: '6px',
+                  whiteSpace: 'nowrap',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
+                  zIndex: 200,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+                }}
+              >
+                <span>⚠️ {walletError}</span>
+                <button 
+                  onClick={(e) => { e.stopPropagation(); clearError(); }} 
+                  style={{ background: 'none', border: 'none', color: '#fca5a5', cursor: 'pointer', fontSize: '0.9rem', lineHeight: 1 }}
+                  title="Dismiss"
+                >
+                  ✕
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </header>
