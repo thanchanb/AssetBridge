@@ -73,20 +73,34 @@ export const WalletProvider = ({ children }) => {
     }
 
     setConnecting(true);
-    console.log('[AssetBridge] Connecting to Midnight Lace wallet. Wallet keys:', Object.keys(wallet));
+    console.log('[AssetBridge] Connecting to Midnight Lace wallet. Target wallet:', wallet);
+
+    // Timeout helper (15 seconds max) to prevent hanging promises
+    const withTimeout = (promise, ms = 15000, label = 'Lace operation') => {
+      return Promise.race([
+        promise,
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error(`${label} timed out after ${ms / 1000}s. Please check your Lace extension window or icon 🦊 in browser bar.`)), ms)
+        )
+      ]);
+    };
 
     try {
       let api = null;
       let usedNetwork = preferredNetwork;
       let lastErr = null;
 
-      // 1. Try wallet.enable() first if available (Triggers Lace Extension Popup)
-      if (typeof wallet.enable === 'function') {
+      // Find enable or connect methods across target wallet and prototypes
+      const enableFn = wallet.enable || (wallet.__proto__ && wallet.__proto__.enable) || window.midnight?.lace?.enable || window.midnight?.mnLace?.enable;
+      const connectFn = wallet.connect || (wallet.__proto__ && wallet.__proto__.connect) || window.midnight?.lace?.connect || window.midnight?.mnLace?.connect;
+
+      // 1. Attempt enable() first to trigger Lace DApp authorization popup
+      if (typeof enableFn === 'function') {
         try {
-          console.log('[AssetBridge] Attempting wallet.enable()...');
-          api = await wallet.enable();
+          console.log('[AssetBridge] Calling wallet.enable()...');
+          api = await withTimeout(enableFn.call(wallet), 15000, 'Lace authorization popup');
         } catch (err) {
-          console.warn('[AssetBridge] wallet.enable() failed:', err.message);
+          console.warn('[AssetBridge] wallet.enable() failed/timed out:', err.message);
           lastErr = err;
           const msg = (err.message || '').toLowerCase();
           if (msg.includes('rejected') || msg.includes('canceled') || msg.includes('declined')) {
@@ -95,14 +109,14 @@ export const WalletProvider = ({ children }) => {
         }
       }
 
-      // 2. Try supported networks sequentially matching Lace active network
-      if (!api && typeof wallet.connect === 'function') {
+      // 2. Attempt connect(netId) if enable() didn't return an API handle
+      if (!api && typeof connectFn === 'function') {
         const networksToTry = Array.from(new Set([preferredNetwork, ...SUPPORTED_NETWORKS]));
 
         for (const netId of networksToTry) {
           try {
             console.log(`[AssetBridge] Attempting wallet.connect('${netId}')...`);
-            api = await wallet.connect(netId);
+            api = await withTimeout(connectFn.call(wallet, netId), 12000, `Lace connection (${netId})`);
             if (api) {
               usedNetwork = netId;
               console.log(`[AssetBridge] Connected to Lace on network: '${netId}'`);
@@ -161,7 +175,6 @@ export const WalletProvider = ({ children }) => {
       setConnectionSuccess(true);
       console.log('[AssetBridge] Connected successfully to Lace. Address:', addressStr);
 
-      // Auto-dismiss success notification banner after 4.5s
       setTimeout(() => {
         setConnectionSuccess(false);
       }, 4500);
