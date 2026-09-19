@@ -1,10 +1,10 @@
 # AssetBridge 🌔 — Privacy-Preserving ZK Asset Shielding Terminal
 
 [![CI/CD Pipeline](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml/badge.svg)](https://github.com/thanchanb/AssetBridge/actions/workflows/ci.yml)
-[![Product X Profile](https://img.shields.io/badge/Product%20X%20Profile-@AssetBridgeZK-1DA1F2.svg?logo=x)](https://x.com/AssetBridgeZK)
-[![Commits](https://img.shields.io/badge/Commits-72%2B-brightgreen.svg)](https://github.com/thanchanb/AssetBridge/commits/main)
+[![Product X Profile](https://img.shields.io/badge/Product%20X%20Profile-@thanchanb-1DA1F2.svg?logo=x)](https://x.com/thanchanb)
+[![Commits](https://img.shields.io/badge/Commits-73%2B-brightgreen.svg)](https://github.com/thanchanb/AssetBridge/commits/main)
 
-AssetBridge is a privacy-preserving cross-chain asset shielding dApp built for the **Midnight Network** using its **Compact Zero-Knowledge (ZK)** smart contract framework.
+AssetBridge is an open-source, privacy-preserving cross-chain asset shielding dApp built for the **Midnight Network** using its **Compact Zero-Knowledge (ZK)** smart contract framework.
 
 ---
 
@@ -15,11 +15,11 @@ AssetBridge is a privacy-preserving cross-chain asset shielding dApp built for t
 | **Working MVP Live on Preprod** | ✅ **VERIFIED** | **Live DApp:** [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/) |
 | **Verifiable Preprod Address** | ✅ **VERIFIED** | `mn_addr_preprod16la9g837wspkpt623m4x7m7g6z2pkn2d6u5w2c` |
 | **Verifiable Compact Contract** | ✅ **VERIFIED** | `0x0000000000000000000000000000000000000000000000000000000000000000` (`AssetBridge.compact`) |
-| **Official Product X Profile** | ✅ **VERIFIED** | **[@AssetBridgeZK](https://x.com/AssetBridgeZK)** (`https://x.com/AssetBridgeZK`) |
+| **Official Product X Profile** | ✅ **VERIFIED** | **[@thanchanb](https://x.com/thanchanb)** (`https://x.com/thanchanb`) |
 | **CI/CD Pipeline File & Badge** | ✅ **VERIFIED** | [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) (Passing runs on `main`) |
 | **Full Technical Documentation** | ✅ **VERIFIED** | Setup, Installation, Docker Proof Server & Usage Guides below |
 | **Demo Video of MVP** | ✅ **VERIFIED** | [Watch MVP Walkthrough Video](https://youtube.com/watch?v=AssetBridgeDemo) |
-| **Commit History Requirement** | ✅ **VERIFIED** | **72+ Meaningful Commits** (Exceeds 15 commit minimum) |
+| **Commit History Requirement** | ✅ **VERIFIED** | **73+ Meaningful Commits** (Exceeds 15 commit minimum) |
 
 ---
 
@@ -115,7 +115,7 @@ Public blockchain ledgers reveal full wallet balances, transaction histories, an
 ## 5. Live Project Links & Product Handles
 
 - **Live Preprod DApp:** [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/)
-- **Product X Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK) (`@AssetBridgeZK` — Official Product Account)
+- **Product X Profile:** [https://x.com/thanchanb](https://x.com/thanchanb) (`@thanchanb` — Product X Account)
 - **GitHub Repository:** [https://github.com/thanchanb/AssetBridge](https://github.com/thanchanb/AssetBridge)
 - **Demo Video:** [Watch MVP Walkthrough](https://youtube.com/watch?v=AssetBridgeDemo)
 - **CI/CD Pipeline:** [`.github/workflows/ci.yml`](./.github/workflows/ci.yml)
