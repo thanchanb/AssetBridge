@@ -39,6 +39,7 @@ const ensureStringAddress = (rawAddress) => {
 export const WalletProvider = ({ children }) => {
   const [connected, setConnected] = useState(false);
   const [connecting, setConnecting] = useState(false);
+  const [connectionSuccess, setConnectionSuccess] = useState(false);
   const [walletAddress, setWalletAddress] = useState(null);
   const [walletApi, setWalletApi] = useState(null);
   const [activeNetwork, setActiveNetwork] = useState('preprod');
@@ -59,6 +60,7 @@ export const WalletProvider = ({ children }) => {
 
   const connect = useCallback(async (preferredNetwork = 'preprod') => {
     setWalletError(null);
+    setConnectionSuccess(false);
 
     const wallet = getMidnightWallet();
 
@@ -78,7 +80,7 @@ export const WalletProvider = ({ children }) => {
       let usedNetwork = preferredNetwork;
       let lastErr = null;
 
-      // 1. Try wallet.enable() first if available
+      // 1. Try wallet.enable() first if available (Triggers Lace Extension Popup)
       if (typeof wallet.enable === 'function') {
         try {
           console.log('[AssetBridge] Attempting wallet.enable()...');
@@ -156,7 +158,14 @@ export const WalletProvider = ({ children }) => {
       setActiveNetwork(usedNetwork);
       setConnected(true);
       setConnecting(false);
+      setConnectionSuccess(true);
       console.log('[AssetBridge] Connected successfully to Lace. Address:', addressStr);
+
+      // Auto-dismiss success notification banner after 4.5s
+      setTimeout(() => {
+        setConnectionSuccess(false);
+      }, 4500);
+
       return true;
     } catch (err) {
       console.error('[AssetBridge] Wallet connection error:', err);
@@ -164,6 +173,7 @@ export const WalletProvider = ({ children }) => {
       setWalletAddress(null);
       setWalletApi(null);
       setConnecting(false);
+      setConnectionSuccess(false);
       setWalletError(err.message || 'Lace connection request failed or was rejected.');
       return false;
     }
@@ -171,6 +181,7 @@ export const WalletProvider = ({ children }) => {
 
   const disconnect = useCallback(() => {
     setConnected(false);
+    setConnectionSuccess(false);
     setWalletAddress(null);
     setWalletApi(null);
     setWalletError(null);
@@ -181,6 +192,7 @@ export const WalletProvider = ({ children }) => {
       value={{
         connected,
         connecting,
+        connectionSuccess,
         walletAddress,
         walletApi,
         activeNetwork,
@@ -188,7 +200,8 @@ export const WalletProvider = ({ children }) => {
         hasExtension,
         connect,
         disconnect,
-        clearError: () => setWalletError(null)
+        clearError: () => setWalletError(null),
+        dismissSuccess: () => setConnectionSuccess(false)
       }}
     >
       {children}

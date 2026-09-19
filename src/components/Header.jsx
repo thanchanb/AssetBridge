@@ -4,7 +4,7 @@ import { useWallet } from '../context/WalletContext';
 const formatAddress = (addr) => {
   if (!addr) return '';
   const str = typeof addr === 'string' ? addr : (addr?.address || addr?.unshieldedAddress || String(addr));
-  return str.length > 12 ? `${str.slice(0, 8)}...${str.slice(-4)}` : str;
+  return str.length > 14 ? `${str.slice(0, 10)}...${str.slice(-4)}` : str;
 };
 
 const Header = () => {
@@ -41,13 +41,19 @@ const Header = () => {
             className={`btn ${connected ? 'btn-ghost' : 'btn-primary'}`}
             onClick={handleToggleWallet}
             disabled={connecting}
-            style={{ fontSize: '13.5px', padding: '9px 18px' }}
+            style={{ fontSize: '13.5px', padding: '9px 18px', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+            title={connected ? `Connected: ${walletAddress}. Click to disconnect.` : 'Click to connect Lace wallet'}
           >
-            {connecting 
-              ? 'Connecting Lace...' 
-              : connected 
-                ? formatAddress(walletAddress) 
-                : 'Connect Lace Wallet'}
+            {connecting ? (
+              'Connecting Lace...'
+            ) : connected ? (
+              <>
+                <span className="dot" style={{ background: '#7be08a', boxShadow: '0 0 10px #7be08a' }}></span>
+                {formatAddress(walletAddress)}
+              </>
+            ) : (
+              'Connect Lace Wallet'
+            )}
           </button>
 
           {walletError && (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { WalletProvider } from './context/WalletContext';
 import StarfieldCanvas from './components/StarfieldCanvas';
+import WalletNotification from './components/WalletNotification';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Bridge from './components/Bridge';
@@ -12,6 +13,7 @@ function App() {
   return (
     <WalletProvider>
       <StarfieldCanvas />
+      <WalletNotification />
       
       <div className="wrap">
         <Header />
