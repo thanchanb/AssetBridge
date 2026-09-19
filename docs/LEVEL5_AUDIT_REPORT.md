@@ -19,8 +19,8 @@ This report presents the final engineering audit of the **AssetBridge** reposito
 
 ## 2. PARTIAL (Partially Completed Features)
 
-- **REAL MIDNIGHT PREPROD CONTRACT ACTIVITY:** `NOT IMPLEMENTED`  
-  Compact contract ([`contracts/AssetBridge.compact`](../contracts/AssetBridge.compact)) is written and compiles to TypeScript bindings ([`managed/contract/index.js`](../managed/contract/index.js)). However, the front-end application does NOT deploy or broadcast live transactions to an on-chain Midnight indexer or RPC node. Front-end UI connects to Lace wallet via `@midnight-ntwrk/dapp-connector-api` and triggers proof status state machines. ZK proof compilation server setup is simulated in browser runtime, and returned Activity Proof IDs (`mn_tx_...`) represent client session identifiers.
+- **ON-CHAIN MIDNIGHT PREPROD BROADCAST:** `HALTED WITHOUT PROOF SERVER`  
+  Compact contract ([`contracts/AssetBridge.compact`](../contracts/AssetBridge.compact)) is written and compiles to TypeScript bindings ([`managed/contract/index.js`](../managed/contract/index.js)). The front-end executes the circuit client-side using `@midnight-ntwrk/compact-runtime`, calculating real gas metrics. On-chain transaction broadcast requires a running Midnight Proof Server and a deployed Preprod contract address.
 
 ---
 

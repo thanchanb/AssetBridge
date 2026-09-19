@@ -15,12 +15,8 @@ This document records the empirical verification testing performed on the live A
 
 > [!IMPORTANT]
 > **Implementation Scope & On-Chain Status:**
-> 1. **REAL MIDNIGHT PREPROD CONTRACT ACTIVITY:** `NOT IMPLEMENTED`  
->    While the Compact smart contract [`contracts/AssetBridge.compact`](../contracts/AssetBridge.compact) is written and compiled to TypeScript bindings ([`managed/contract/index.js`](../managed/contract/index.js)), the frontend application does NOT deploy or broadcast live transactions to an on-chain Midnight indexer or RPC node.
-> 2. **PROOF GENERATION:** `CLIENT SIMULATION MODE`  
->    ZK proof compilation and network confirmation are simulated in browser runtime state machines within [`src/components/Bridge.jsx`](../src/components/Bridge.jsx).
-> 3. **ACTIVITY IDENTIFIERS:** `DEMO ACTIVITY ID`  
->    The returned identifier `mn_tx_...` is a client session Activity ID, NOT a verified on-chain Midnight transaction hash.
+> 1. **CIRCUIT EXECUTION:** Client-side Compact circuit execution (`bridge_asset`) via `@midnight-ntwrk/compact-runtime`.
+> 2. **ON-CHAIN BROADCAST PREREQUISITES:** On-chain broadcast requires a deployed contract address and an active Midnight Proof Server at `http://localhost:6300`. Without these, the dApp halts execution after proving and reports missing infrastructure honestly.
 
 ---
 
