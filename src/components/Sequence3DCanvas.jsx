@@ -23,25 +23,34 @@ const Sequence3DCanvas = ({ step = 1 }) => {
 
       function sizeRenderer() {
         if (!host) return;
-        const w = host.clientWidth || 180;
-        const h = host.clientHeight || 180;
+        const w = host.clientWidth || 220;
+        const h = host.clientHeight || 200;
         renderer.setSize(w, h, false);
         camera.aspect = w / h;
         camera.updateProjectionMatrix();
       }
       sizeRenderer();
 
-      // Ambient + Directional Lights for realistic specular depth
-      const ambLight = new THREE.AmbientLight(0xffffff, 0.6);
+      const resizeObserver = new ResizeObserver(() => {
+        sizeRenderer();
+      });
+      resizeObserver.observe(host);
+
+      // Multi-Light Shading Setup
+      const ambLight = new THREE.AmbientLight(0xffffff, 0.7);
       scene.add(ambLight);
 
-      const light1 = new THREE.PointLight(0xffb238, 2.5, 30);
-      light1.position.set(3, 3, 3);
+      const light1 = new THREE.PointLight(0xffb238, 3.5, 30);
+      light1.position.set(4, 4, 4);
       scene.add(light1);
 
-      const light2 = new THREE.PointLight(0xff6b35, 2.0, 30);
-      light2.position.set(-3, -3, 3);
+      const light2 = new THREE.PointLight(0xff6b35, 3.0, 30);
+      light2.position.set(-4, -4, 4);
       scene.add(light2);
+
+      const cyanLight = new THREE.PointLight(0x06b6d4, 2.0, 30);
+      cyanLight.position.set(0, -4, -4);
+      scene.add(cyanLight);
 
       group = new THREE.Group();
       scene.add(group);
@@ -49,139 +58,176 @@ const Sequence3DCanvas = ({ step = 1 }) => {
       let meshA, meshB, meshC, particles;
 
       if (step === 1) {
-        // Step 1: Public Vault — Metallic Golden TorusKnot & Glowing Core
-        const knotGeo = new THREE.TorusKnotGeometry(1.1, 0.08, 96, 16, 2, 3);
+        // Step 1: Public Vault Hex Prism & Double Orbit Rings
+        const prismGeo = new THREE.CylinderGeometry(1.1, 1.1, 1.1, 6);
+        const prismMat = new THREE.MeshStandardMaterial({
+          color: 0xffb238,
+          roughness: 0.15,
+          metalness: 0.85,
+          emissive: 0x4a2505,
+          emissiveIntensity: 0.3
+        });
+        meshA = new THREE.Mesh(prismGeo, prismMat);
+        group.add(meshA);
+        disposables.push(prismGeo, prismMat);
+
+        const coreGeo = new THREE.SphereGeometry(0.55, 32, 32);
+        const coreMat = new THREE.MeshStandardMaterial({
+          color: 0xff6b35,
+          emissive: 0xffa500,
+          emissiveIntensity: 0.7
+        });
+        meshB = new THREE.Mesh(coreGeo, coreMat);
+        group.add(meshB);
+        disposables.push(coreGeo, coreMat);
+
+        const r1Geo = new THREE.TorusGeometry(1.7, 0.03, 16, 64);
+        const r1Mat = new THREE.MeshBasicMaterial({ color: 0xffb238, transparent: true, opacity: 0.6 });
+        meshC = new THREE.Mesh(r1Geo, r1Mat);
+        meshC.rotation.x = Math.PI / 3;
+        group.add(meshC);
+        disposables.push(r1Geo, r1Mat);
+
+        // Gold deposit particles rising
+        const pCount = 80;
+        const pPos = new Float32Array(pCount * 3);
+        for (let i = 0; i < pCount; i++) {
+          pPos[i * 3] = (Math.random() - 0.5) * 3;
+          pPos[i * 3 + 1] = (Math.random() - 0.5) * 3;
+          pPos[i * 3 + 2] = (Math.random() - 0.5) * 3;
+        }
+        const pGeo = new THREE.BufferGeometry();
+        pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+        const pMat = new THREE.PointsMaterial({ size: 0.05, color: 0xffb238, transparent: true, opacity: 0.85 });
+        particles = new THREE.Points(pGeo, pMat);
+        group.add(particles);
+        disposables.push(pGeo, pMat);
+      } else if (step === 2) {
+        // Step 2: ZK Witness Hypercube & Double-Helix Particles
+        const knotGeo = new THREE.TorusKnotGeometry(1.25, 0.12, 128, 32, 2, 3);
         const knotMat = new THREE.MeshStandardMaterial({
           color: 0xffb238,
-          roughness: 0.2,
-          metalness: 0.8,
-          emissive: 0x3a1e05,
-          emissiveIntensity: 0.3
+          roughness: 0.1,
+          metalness: 0.9,
+          emissive: 0x3d1f05,
+          emissiveIntensity: 0.4
         });
         meshA = new THREE.Mesh(knotGeo, knotMat);
         group.add(meshA);
         disposables.push(knotGeo, knotMat);
 
-        const innerGeo = new THREE.SphereGeometry(0.55, 32, 32);
-        const innerMat = new THREE.MeshStandardMaterial({
-          color: 0xc9a15a,
-          emissive: 0xffb238,
-          emissiveIntensity: 0.5
-        });
-        meshB = new THREE.Mesh(innerGeo, innerMat);
-        group.add(meshB);
-        disposables.push(innerGeo, innerMat);
-
-        const ringGeo = new THREE.TorusGeometry(1.65, 0.02, 16, 64);
-        const ringMat = new THREE.MeshBasicMaterial({ color: 0xffb238, transparent: true, opacity: 0.5 });
-        meshC = new THREE.Mesh(ringGeo, ringMat);
-        meshC.rotation.x = Math.PI / 3;
-        group.add(meshC);
-        disposables.push(ringGeo, ringMat);
-      } else if (step === 2) {
-        // Step 2: Prove Privately — Interlocking Dual ZK Witness Torus Knots
-        const outerGeo = new THREE.TorusKnotGeometry(1.2, 0.06, 96, 16, 3, 4);
-        const outerMat = new THREE.MeshStandardMaterial({
-          color: 0xffb238,
-          wireframe: true,
-          roughness: 0.1,
-          metalness: 0.9
-        });
-        meshA = new THREE.Mesh(outerGeo, outerMat);
-        group.add(meshA);
-        disposables.push(outerGeo, outerMat);
-
-        const innerGeo = new THREE.TorusKnotGeometry(0.85, 0.05, 96, 16, 2, 5);
-        const innerMat = new THREE.MeshStandardMaterial({
+        const shellGeo = new THREE.IcosahedronGeometry(1.9, 1);
+        const shellMat = new THREE.MeshBasicMaterial({
           color: 0xff6b35,
           wireframe: true,
-          roughness: 0.1,
-          metalness: 0.9
+          transparent: true,
+          opacity: 0.4
         });
-        meshB = new THREE.Mesh(innerGeo, innerMat);
-        meshB.rotation.z = Math.PI / 2;
+        meshB = new THREE.Mesh(shellGeo, shellMat);
         group.add(meshB);
-        disposables.push(innerGeo, innerMat);
+        disposables.push(shellGeo, shellMat);
 
-        // Particle stream
-        const pCount = 100;
-        const pPositions = new Float32Array(pCount * 3);
+        // Helical ZK witness particles
+        const pCount = 120;
+        const pPos = new Float32Array(pCount * 3);
         for (let i = 0; i < pCount; i++) {
-          const r = 1.4 + Math.random() * 0.9;
-          const theta = Math.random() * Math.PI * 2;
-          const phi = Math.acos((Math.random() * 2) - 1);
-          pPositions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-          pPositions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-          pPositions[i * 3 + 2] = r * Math.cos(phi);
+          const t = (i / pCount) * Math.PI * 4;
+          pPos[i * 3] = Math.cos(t) * 1.6;
+          pPos[i * 3 + 1] = (i / pCount - 0.5) * 3.2;
+          pPos[i * 3 + 2] = Math.sin(t) * 1.6;
         }
         const pGeo = new THREE.BufferGeometry();
-        pGeo.setAttribute('position', new THREE.BufferAttribute(pPositions, 3));
-        const pMat = new THREE.PointsMaterial({ size: 0.045, color: 0xffb238, transparent: true, opacity: 0.8 });
+        pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+        const pMat = new THREE.PointsMaterial({ size: 0.055, color: 0xffb238, transparent: true, opacity: 0.9 });
         particles = new THREE.Points(pGeo, pMat);
         group.add(particles);
         disposables.push(pGeo, pMat);
       } else {
-        // Step 3: Shielded ZK Asset — Emerald-Ember Core & 3 Intersecting Forcefield Rings
-        const coreGeo = new THREE.IcosahedronGeometry(0.75, 1);
-        const coreMat = new THREE.MeshStandardMaterial({
+        // Step 3: Shielded Emerald ZK Crystal & Triple Forcefield
+        const gemGeo = new THREE.DodecahedronGeometry(1.1);
+        const gemMat = new THREE.MeshStandardMaterial({
           color: 0x7be08a,
-          roughness: 0.2,
-          metalness: 0.6,
-          emissive: 0x22c55e,
-          emissiveIntensity: 0.6
+          roughness: 0.15,
+          metalness: 0.65,
+          emissive: 0x15803d,
+          emissiveIntensity: 0.7
         });
-        meshA = new THREE.Mesh(coreGeo, coreMat);
+        meshA = new THREE.Mesh(gemGeo, gemMat);
         group.add(meshA);
-        disposables.push(coreGeo, coreMat);
+        disposables.push(gemGeo, gemMat);
 
-        const r1Geo = new THREE.TorusGeometry(1.4, 0.025, 16, 64);
-        const r1Mat = new THREE.MeshBasicMaterial({ color: 0x7be08a, transparent: true, opacity: 0.65 });
+        const r1Geo = new THREE.TorusGeometry(1.6, 0.03, 16, 64);
+        const r1Mat = new THREE.MeshBasicMaterial({ color: 0x7be08a, transparent: true, opacity: 0.7 });
         meshB = new THREE.Mesh(r1Geo, r1Mat);
         meshB.rotation.x = Math.PI / 4;
         group.add(meshB);
         disposables.push(r1Geo, r1Mat);
 
-        const r2Geo = new THREE.TorusGeometry(1.45, 0.025, 16, 64);
-        const r2Mat = new THREE.MeshBasicMaterial({ color: 0xffb238, transparent: true, opacity: 0.5 });
+        const r2Geo = new THREE.TorusGeometry(1.65, 0.03, 16, 64);
+        const r2Mat = new THREE.MeshBasicMaterial({ color: 0xffb238, transparent: true, opacity: 0.55 });
         meshC = new THREE.Mesh(r2Geo, r2Mat);
         meshC.rotation.y = Math.PI / 3;
         group.add(meshC);
         disposables.push(r2Geo, r2Mat);
+
+        // Shield aura particles
+        const pCount = 90;
+        const pPos = new Float32Array(pCount * 3);
+        for (let i = 0; i < pCount; i++) {
+          const r = 1.8 + Math.random() * 0.6;
+          const theta = Math.random() * Math.PI * 2;
+          const phi = Math.acos((Math.random() * 2) - 1);
+          pPos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+          pPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+          pPos[i * 3 + 2] = r * Math.cos(phi);
+        }
+        const pGeo = new THREE.BufferGeometry();
+        pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+        const pMat = new THREE.PointsMaterial({ size: 0.05, color: 0x7be08a, transparent: true, opacity: 0.85 });
+        particles = new THREE.Points(pGeo, pMat);
+        group.add(particles);
+        disposables.push(pGeo, pMat);
       }
 
-      let mouseX = 0, mouseY = 0;
-      const handleMouseMove = (e) => {
-        const r = host.getBoundingClientRect();
-        mouseX = ((e.clientX - r.left) / r.width - 0.5) * 0.6;
-        mouseY = ((e.clientY - r.top) / r.height - 0.5) * 0.6;
+      // Global Viewport Cursor Tracking
+      let targetYaw = 0, targetPitch = 0, currentYaw = 0, currentPitch = 0;
+      const handleGlobalMouseMove = (e) => {
+        const ndcX = (e.clientX / window.innerWidth - 0.5) * 2;
+        const ndcY = (e.clientY / window.innerHeight - 0.5) * 2;
+        targetYaw = ndcX * 1.2;
+        targetPitch = -ndcY * 0.8;
       };
 
-      window.addEventListener('mousemove', handleMouseMove, { passive: true });
-      window.addEventListener('resize', sizeRenderer);
+      window.addEventListener('mousemove', handleGlobalMouseMove, { passive: true });
 
       const animate = (t) => {
         animationFrameId = requestAnimationFrame(animate);
 
-        group.rotation.y += 0.007;
-        group.rotation.x = Math.sin(t * 0.0006) * 0.15 + mouseY;
-        group.rotation.y += mouseX * 0.05;
+        currentYaw += (targetYaw - currentYaw) * 0.08;
+        currentPitch += (targetPitch - currentPitch) * 0.08;
+
+        group.rotation.y = currentYaw;
+        group.rotation.x = currentPitch;
 
         if (step === 1) {
+          meshA.rotation.y += 0.01;
+          meshA.rotation.x += 0.005;
+          meshB.scale.setScalar(1 + Math.sin(t * 0.003) * 0.08);
+          meshC.rotation.z -= 0.006;
+          if (particles) particles.rotation.y += 0.003;
+        } else if (step === 2) {
           meshA.rotation.x += 0.006;
           meshA.rotation.y += 0.008;
-          meshB.scale.setScalar(1 + Math.sin(t * 0.002) * 0.08);
-          meshC.rotation.z -= 0.005;
-        } else if (step === 2) {
-          meshA.rotation.x += 0.005;
-          meshA.rotation.y += 0.007;
-          meshB.rotation.y -= 0.01;
-          meshB.rotation.z += 0.006;
-          if (particles) particles.rotation.y += 0.002;
+          meshB.rotation.y -= 0.005;
+          meshB.rotation.z += 0.004;
+          if (particles) particles.rotation.y += 0.005;
         } else if (step === 3) {
           meshA.rotation.y += 0.008;
+          meshA.rotation.x += 0.004;
           meshA.scale.setScalar(1 + Math.sin(t * 0.0025) * 0.07);
           meshB.rotation.z += 0.008;
           meshC.rotation.x += 0.006;
+          if (particles) particles.rotation.y -= 0.003;
         }
 
         renderer.render(scene, camera);
@@ -191,8 +237,8 @@ const Sequence3DCanvas = ({ step = 1 }) => {
 
       return () => {
         cancelAnimationFrame(animationFrameId);
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('resize', sizeRenderer);
+        resizeObserver.disconnect();
+        window.removeEventListener('mousemove', handleGlobalMouseMove);
         if (host && renderer.domElement && host.contains(renderer.domElement)) {
           host.removeChild(renderer.domElement);
         }
