@@ -73,14 +73,14 @@ export const WalletProvider = ({ children }) => {
     }
 
     setConnecting(true);
-    console.log('[AssetBridge] Connecting to Midnight Lace wallet. Target wallet:', wallet);
+    console.log('[AssetBridge] Target Midnight Lace wallet:', wallet);
 
-    // Timeout helper (15 seconds max) to prevent hanging promises
-    const withTimeout = (promise, ms = 15000, label = 'Lace operation') => {
+    // Timeout helper (30s max so user has time to click Approve in Lace)
+    const withTimeout = (promise, ms = 30000, label = 'Lace operation') => {
       return Promise.race([
         promise,
         new Promise((_, reject) =>
-          setTimeout(() => reject(new Error(`${label} timed out after ${ms / 1000}s. Please check your Lace extension window or icon 🦊 in browser bar.`)), ms)
+          setTimeout(() => reject(new Error(`${label} timed out. Please click the Lace extension icon 🦊 in your browser bar to approve connection.`)), ms)
         )
       ]);
     };
@@ -90,33 +90,34 @@ export const WalletProvider = ({ children }) => {
       let usedNetwork = preferredNetwork;
       let lastErr = null;
 
-      // Find enable or connect methods across target wallet and prototypes
-      const enableFn = wallet.enable || (wallet.__proto__ && wallet.__proto__.enable) || window.midnight?.lace?.enable || window.midnight?.mnLace?.enable;
-      const connectFn = wallet.connect || (wallet.__proto__ && wallet.__proto__.connect) || window.midnight?.lace?.connect || window.midnight?.mnLace?.connect;
+      // Find enable or connect methods across target wallet and prototype chain
+      const connectFn = wallet.connect || wallet.enable || (wallet.__proto__ && (wallet.__proto__.connect || wallet.__proto__.enable));
 
-      // 1. Attempt enable() first to trigger Lace DApp authorization popup
-      if (typeof enableFn === 'function') {
-        try {
-          console.log('[AssetBridge] Calling wallet.enable()...');
-          api = await withTimeout(enableFn.call(wallet), 15000, 'Lace authorization popup');
-        } catch (err) {
-          console.warn('[AssetBridge] wallet.enable() failed/timed out:', err.message);
-          lastErr = err;
-          const msg = (err.message || '').toLowerCase();
-          if (msg.includes('rejected') || msg.includes('canceled') || msg.includes('declined')) {
-            throw err;
-          }
+      if (typeof connectFn !== 'function') {
+        throw new Error('Lace extension found, but no connect() or enable() method is available.');
+      }
+
+      // Priority 1: Call connect() with NO parameters (connects to Lace's current active network)
+      try {
+        console.log('[AssetBridge] Calling wallet.connect()...');
+        api = await withTimeout(connectFn.call(wallet), 30000, 'Lace authorization popup');
+      } catch (err) {
+        console.warn('[AssetBridge] wallet.connect() without params failed:', err.message);
+        lastErr = err;
+        const msg = (err.message || '').toLowerCase();
+        if (msg.includes('rejected') || msg.includes('canceled') || msg.includes('declined')) {
+          throw err;
         }
       }
 
-      // 2. Attempt connect(netId) if enable() didn't return an API handle
-      if (!api && typeof connectFn === 'function') {
+      // Priority 2: Call connect(preferredNetwork) if 0-param call didn't return an API handle
+      if (!api) {
         const networksToTry = Array.from(new Set([preferredNetwork, ...SUPPORTED_NETWORKS]));
 
         for (const netId of networksToTry) {
           try {
-            console.log(`[AssetBridge] Attempting wallet.connect('${netId}')...`);
-            api = await withTimeout(connectFn.call(wallet, netId), 12000, `Lace connection (${netId})`);
+            console.log(`[AssetBridge] Calling wallet.connect('${netId}')...`);
+            api = await withTimeout(connectFn.call(wallet, netId), 30000, `Lace connection (${netId})`);
             if (api) {
               usedNetwork = netId;
               console.log(`[AssetBridge] Connected to Lace on network: '${netId}'`);
@@ -137,7 +138,7 @@ export const WalletProvider = ({ children }) => {
         if (lastErr && lastErr.message && lastErr.message.includes('Network ID mismatch')) {
           throw new Error('Network ID mismatch: Please check your Lace extension settings ⚙️ and select Midnight Preprod.');
         }
-        throw lastErr || new Error('Could not connect to Lace. Please verify your Lace wallet network settings.');
+        throw lastErr || new Error('Could not connect to Lace. Please check your Lace wallet extension icon 🦊 in browser bar.');
       }
 
       // Extract address using available DApp connector API methods
