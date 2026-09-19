@@ -9,7 +9,7 @@ const Feedback3DCanvas = ({ rating = 5 }) => {
     if (!host) return;
 
     let animationFrameId;
-    let renderer, scene, camera, group;
+    let renderer, scene, camera, group, gemMesh;
     const disposables = [];
 
     try {
@@ -55,11 +55,11 @@ const Feedback3DCanvas = ({ rating = 5 }) => {
         emissive: 0x4a2505,
         emissiveIntensity: 0.3
       });
-      const gemMesh = new THREE.Mesh(gemGeo, gemMat);
+      gemMesh = new THREE.Mesh(gemGeo, gemMat);
       group.add(gemMesh);
       disposables.push(gemGeo, gemMat);
 
-      // 2. Inner Glowing Octahedron Core
+      // 2. Inner Glowing Octahedron Core Eye
       const coreGeo = new THREE.OctahedronGeometry(0.7, 1);
       const coreMat = new THREE.MeshStandardMaterial({
         color: 0xff6b35,
@@ -113,29 +113,37 @@ const Feedback3DCanvas = ({ rating = 5 }) => {
       scene.add(particles);
       disposables.push(particleGeo, particleMat);
 
-      let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
-      const handleMouseMove = (e) => {
-        const rect = host.getBoundingClientRect();
-        mouseX = ((e.clientX - rect.left) / rect.width - 0.5) * 0.8;
-        mouseY = ((e.clientY - rect.top) / rect.height - 0.5) * 0.8;
+      // Global Viewport Cursor Tracking State (MetaMask-style head gaze tracking)
+      let targetYaw = 0;
+      let targetPitch = 0;
+      let currentYaw = 0;
+      let currentPitch = 0;
+
+      const handleGlobalMouseMove = (e) => {
+        const ndcX = (e.clientX / window.innerWidth - 0.5) * 2;
+        const ndcY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+        targetYaw = ndcX * 1.2;
+        targetPitch = -ndcY * 0.8;
       };
 
-      window.addEventListener('mousemove', handleMouseMove, { passive: true });
+      window.addEventListener('mousemove', handleGlobalMouseMove, { passive: true });
       window.addEventListener('resize', sizeRenderer);
 
       const animate = (t) => {
         animationFrameId = requestAnimationFrame(animate);
 
-        targetX += (mouseX - targetX) * 0.06;
-        targetY += (mouseY - targetY) * 0.06;
-
         const ratingSpeedMultiplier = 0.8 + (rating / 5) * 0.5;
+
+        // Smooth spring lerp for head tracking gaze
+        currentYaw += (targetYaw - currentYaw) * 0.08;
+        currentPitch += (targetPitch - currentPitch) * 0.08;
+
+        group.rotation.y = currentYaw;
+        group.rotation.x = currentPitch;
 
         gemMesh.rotation.x += 0.005 * ratingSpeedMultiplier;
         gemMesh.rotation.y += 0.008 * ratingSpeedMultiplier;
-
-        group.rotation.x = Math.sin(t * 0.0005) * 0.15 + targetY;
-        group.rotation.y += targetX * 0.1;
 
         coreMesh.rotation.y -= 0.01;
         ringMesh.rotation.z += 0.004;
@@ -151,7 +159,7 @@ const Feedback3DCanvas = ({ rating = 5 }) => {
 
       return () => {
         cancelAnimationFrame(animationFrameId);
-        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mousemove', handleGlobalMouseMove);
         window.removeEventListener('resize', sizeRenderer);
         if (host && renderer.domElement && host.contains(renderer.domElement)) {
           host.removeChild(renderer.domElement);

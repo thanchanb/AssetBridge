@@ -9,7 +9,7 @@ const ThreeCanvas = () => {
     if (!host) return;
 
     let animationFrameId;
-    let renderer, scene, camera, group;
+    let renderer, scene, camera, group, eyeMesh;
     const disposables = [];
 
     try {
@@ -30,19 +30,19 @@ const ThreeCanvas = () => {
       }
       sizeRenderer();
 
-      // Lighting Setup
+      // Multi-Point Dynamic Lighting Setup
       const ambientLight = new THREE.AmbientLight(0xfff5e6, 0.7);
       scene.add(ambientLight);
 
-      const goldLight = new THREE.PointLight(0xffb238, 3.5, 30);
+      const goldLight = new THREE.PointLight(0xffb238, 4.0, 30);
       goldLight.position.set(4, 4, 4);
       scene.add(goldLight);
 
-      const emberLight = new THREE.PointLight(0xff6b35, 3.0, 30);
+      const emberLight = new THREE.PointLight(0xff6b35, 3.5, 30);
       emberLight.position.set(-4, -4, 4);
       scene.add(emberLight);
 
-      const cyanRimLight = new THREE.PointLight(0x06b6d4, 2.0, 30);
+      const cyanRimLight = new THREE.PointLight(0x06b6d4, 2.5, 30);
       cyanRimLight.position.set(0, -4, -4);
       scene.add(cyanRimLight);
 
@@ -88,7 +88,21 @@ const ThreeCanvas = () => {
       group.add(coreMesh);
       disposables.push(coreGeo, coreMat);
 
-      // 4. Core Outer Glow Aura
+      // 4. Interactive MetaMask-Style "Eye / Pupil Lens" that stares directly at cursor
+      const eyeGeo = new THREE.CylinderGeometry(0.25, 0.25, 0.15, 32);
+      const eyeMat = new THREE.MeshStandardMaterial({
+        color: 0xfff6e0,
+        emissive: 0xffb238,
+        emissiveIntensity: 0.9,
+        roughness: 0.1
+      });
+      eyeMesh = new THREE.Mesh(eyeGeo, eyeMat);
+      eyeMesh.rotation.x = Math.PI / 2;
+      eyeMesh.position.z = 0.72; // Positioned on front surface of core
+      group.add(eyeMesh);
+      disposables.push(eyeGeo, eyeMat);
+
+      // 5. Core Outer Glow Aura
       const glowGeo = new THREE.SphereGeometry(1.05, 32, 32);
       const glowMat = new THREE.MeshBasicMaterial({
         color: 0xffb238,
@@ -99,7 +113,7 @@ const ThreeCanvas = () => {
       group.add(glowMesh);
       disposables.push(glowGeo, glowMat);
 
-      // 5. Swirling Spiral Galaxy Particle Vortex
+      // 6. Swirling Spiral Galaxy Particle Vortex
       const particleCount = 450;
       const positions = new Float32Array(particleCount * 3);
       const colors = new Float32Array(particleCount * 3);
@@ -139,40 +153,57 @@ const ThreeCanvas = () => {
       scene.add(particleSystem);
       disposables.push(particleGeo, particleMat);
 
-      let pmx = 0, pmy = 0, ptx = 0, pty = 0;
-      const handleMouseMove = (e) => {
-        const r = host.getBoundingClientRect();
-        ptx = ((e.clientX - r.left) / r.width - 0.5);
-        pty = ((e.clientY - r.top) / r.height - 0.5);
+      // Global Viewport Cursor Tracking State (MetaMask-style head gaze tracking)
+      let targetYaw = 0;
+      let targetPitch = 0;
+      let currentYaw = 0;
+      let currentPitch = 0;
+
+      const handleGlobalMouseMove = (e) => {
+        // Normalized device coordinates (-1 to 1) relative to viewport center
+        const ndcX = (e.clientX / window.innerWidth - 0.5) * 2;
+        const ndcY = (e.clientY / window.innerHeight - 0.5) * 2;
+
+        // Turn up to ~80 degrees left/right, tilt up to ~55 degrees up/down
+        targetYaw = ndcX * 1.4;
+        targetPitch = -ndcY * 0.95;
       };
-      window.addEventListener('mousemove', handleMouseMove, { passive: true });
+
+      window.addEventListener('mousemove', handleGlobalMouseMove, { passive: true });
       window.addEventListener('resize', sizeRenderer);
 
       const animate = (t) => {
         animationFrameId = requestAnimationFrame(animate);
 
-        // Counter-rotations for realistic multi-layered depth
+        // Smooth spring lerp for head tracking eye-gaze
+        currentYaw += (targetYaw - currentYaw) * 0.08;
+        currentPitch += (targetPitch - currentPitch) * 0.08;
+
+        // Apply cursor eye gaze to overall 3D group
+        group.rotation.y = currentYaw;
+        group.rotation.x = currentPitch;
+
+        // Counter-rotations inside the model for fluid motion
         knotMesh.rotation.x += 0.005;
-        knotMesh.rotation.y += 0.008;
+        knotMesh.rotation.z += 0.004;
 
         shellMesh.rotation.y -= 0.003;
         shellMesh.rotation.z += 0.002;
 
         particleSystem.rotation.y -= 0.002;
 
-        // Core pulse wave
-        const pulse = 1 + Math.sin(t * 0.002) * 0.07;
+        // Pulse core
+        const pulse = 1 + Math.sin(t * 0.0025) * 0.08;
         coreMesh.scale.setScalar(pulse);
         glowMesh.scale.setScalar(pulse * 1.05);
 
-        // Smooth mouse responsiveness
-        pmx += (ptx - pmx) * 0.05;
-        pmy += (pty - pmy) * 0.05;
-        group.rotation.y += pmx * 0.015;
-        group.rotation.x = pmy * 0.015;
+        // Slight eye flare based on distance from center
+        const eyeOffset = Math.sqrt(currentYaw * currentYaw + currentPitch * currentPitch);
+        eyeMat.emissiveIntensity = 0.8 + eyeOffset * 0.4;
 
-        camera.position.x += (pmx * 0.8 - camera.position.x) * 0.04;
-        camera.position.y += (-pmy * 0.6 - camera.position.y) * 0.04;
+        // Smooth camera drift
+        camera.position.x += (currentYaw * 0.4 - camera.position.x) * 0.05;
+        camera.position.y += (currentPitch * 0.3 - camera.position.y) * 0.05;
         camera.lookAt(0, 0, 0);
 
         renderer.render(scene, camera);
@@ -181,7 +212,7 @@ const ThreeCanvas = () => {
 
       return () => {
         cancelAnimationFrame(animationFrameId);
-        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('mousemove', handleGlobalMouseMove);
         window.removeEventListener('resize', sizeRenderer);
         if (host && renderer.domElement && host.contains(renderer.domElement)) {
           host.removeChild(renderer.domElement);
