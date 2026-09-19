@@ -8,7 +8,7 @@ const Footer = () => {
         AssetBridge
       </div>
       <div>
-        Built on Midnight · Preprod testnet · <a href="https://github.com/thanchanb/AssetBridge#readme" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'underline' }}>Docs & Code</a>
+        Built on Midnight · Preprod testnet · <a href="https://x.com/AssetBridgeZK" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'underline', marginRight: '12px' }}>Product X (@AssetBridgeZK)</a> · <a href="https://github.com/thanchanb/AssetBridge#readme" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'underline' }}>Docs & Code</a>
       </div>
     </footer>
   );
