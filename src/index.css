@@ -532,30 +532,31 @@ h1 em {
 
 /* SEQUENCE SECTION */
 .sequence {
-  padding: 60px 0 100px;
+  padding: 80px 0 100px;
   scroll-margin-top: 100px;
   position: relative;
   z-index: 10;
 }
 
 .sequence-head {
-  max-width: 620px;
+  max-width: 640px;
   margin-bottom: 48px;
 }
 
 .sequence-head h2 {
-  font-size: clamp(28px, 3.6vw, 42px);
+  font-size: clamp(28px, 3.6vw, 44px);
   font-weight: 700;
   letter-spacing: -0.025em;
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   color: var(--text);
   font-family: var(--font-display);
-  line-height: 1.15;
+  line-height: 1.12;
+  text-shadow: 0 0 30px rgba(255, 178, 56, 0.2);
 }
 
 .sequence-head p {
   color: var(--text-muted);
-  font-size: 16.5px;
+  font-size: 17px;
   line-height: 1.6;
   margin: 0;
 }
@@ -563,7 +564,7 @@ h1 em {
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 
 @media (max-width: 900px) {
@@ -575,30 +576,30 @@ h1 em {
 }
 
 .step-3d {
-  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  background: linear-gradient(180deg, #181209 0%, #130f09 100%);
   border: 1px solid var(--border-strong);
-  border-radius: 22px;
-  padding: 24px 24px 28px 24px;
+  border-radius: 24px;
+  padding: 24px 24px 30px 24px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.12s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: var(--shadow-1), var(--shadow-2);
+  box-shadow: 0 16px 50px -10px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255,255,255,0.03) inset;
   display: flex;
   flex-direction: column;
 }
 
 .step-3d:hover {
   border-color: var(--violet-soft);
-  box-shadow: 0 16px 40px -6px rgba(255, 140, 20, 0.4);
+  box-shadow: 0 20px 50px -6px rgba(255, 140, 20, 0.45);
 }
 
 .step-3d::before {
   content: "";
   position: absolute;
   inset: -1px;
-  border-radius: 22px;
+  border-radius: 24px;
   padding: 1px;
-  background: linear-gradient(160deg, rgba(255,220,150,0.35), rgba(255,107,53,0.12) 40%, transparent 70%);
+  background: linear-gradient(160deg, rgba(255,220,150,0.40), rgba(255,107,53,0.15) 40%, transparent 70%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -609,46 +610,62 @@ h1 em {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .step-num {
   font-family: var(--font-mono);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--violet-soft);
-  background: rgba(255, 178, 56, 0.08);
-  padding: 4px 10px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 178, 56, 0.2);
+  background: rgba(255, 178, 56, 0.12);
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 178, 56, 0.3);
 }
 
 .step-badge {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 11.5px;
+  font-weight: 600;
   color: var(--moon);
-  background: rgba(255, 107, 53, 0.08);
-  padding: 3px 8px;
+  background: rgba(255, 107, 53, 0.12);
+  padding: 4px 10px;
   border-radius: 100px;
-  border: 1px solid rgba(255, 107, 53, 0.2);
+  border: 1px solid rgba(255, 107, 53, 0.3);
 }
 
 .step-3d-visual {
   width: 100%;
-  height: 200px;
-  margin-bottom: 16px;
+  height: 220px;
+  margin-bottom: 20px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 150, 30, 0.15) 0%, rgba(255, 107, 53, 0.03) 50%, transparent 70%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 190, 90, 0.12);
+  overflow: hidden;
+}
+
+.visual-glow-halo {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 178, 56, 0.25), transparent 70%);
+  filter: blur(12px);
+  pointer-events: none;
 }
 
 .step-3d h4 {
-  font-size: 19px;
+  font-size: 20px;
   margin: 0 0 10px;
   font-weight: 700;
-  color: var(--text);
+  color: #ffffff;
   font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }
 
 .step-3d p {

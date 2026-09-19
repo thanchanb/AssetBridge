@@ -9,7 +9,7 @@ const StepCard = ({ num, title, description, badge, stepIndex }) => {
     const r = cardRef.current.getBoundingClientRect();
     const px = (e.clientX - r.left) / r.width - 0.5;
     const py = (e.clientY - r.top) / r.height - 0.5;
-    cardRef.current.style.transform = `rotateY(${px * 8}deg) rotateX(${-py * 8}deg) translateZ(0)`;
+    cardRef.current.style.transform = `rotateY(${px * 10}deg) rotateX(${-py * 10}deg) translateZ(0)`;
   };
 
   const handleMouseLeave = () => {
@@ -31,6 +31,7 @@ const StepCard = ({ num, title, description, badge, stepIndex }) => {
         </div>
         
         <div className="step-3d-visual">
+          <div className="visual-glow-halo"></div>
           <Sequence3DCanvas step={stepIndex} />
         </div>
 
