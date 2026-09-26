@@ -5,7 +5,7 @@ const WalletContext = createContext(null);
 // Exactly the 4 networks supported by Midnight Lace wallet
 const SUPPORTED_NETWORKS = ['preprod', 'undeployed', 'preview', 'mainnet'];
 
-export const getMidnightWallet = () => {
+const getMidnightWallet = () => {
   if (typeof window === 'undefined' || !window.midnight) {
     return null;
   }

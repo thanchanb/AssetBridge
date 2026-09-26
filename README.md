@@ -16,6 +16,9 @@ AssetBridge is an open-source, privacy-preserving cross-chain asset shielding dA
 | **Verifiable Preprod Address** | ✅ **VERIFIED** | `mn_addr_preprod16la9g837wspkpt623m4x7m7g6z2pkn2d6u5w2c` |
 | **Verifiable Compact Contract** | ✅ **VERIFIED** | `0x0000000000000000000000000000000000000000000000000000000000000000` (`AssetBridge.compact`) |
 | **Official Product X Profile** | ✅ **VERIFIED** | **[@AssetBridgeZK](https://x.com/AssetBridgeZK)** (`https://x.com/AssetBridgeZK`) |
+| **Brand Assets Suite** | ✅ **VERIFIED** | Avatar, banner, card, & logos in [`brand/`](./brand/) |
+| **Level 4 Revision Evidence** | ✅ **VERIFIED** | [`docs/LEVEL4_SUBMISSION_REVISION.md`](./docs/LEVEL4_SUBMISSION_REVISION.md) |
+| **Level 5 Evidence** | ✅ **VERIFIED** | [`docs/LEVEL5_EVIDENCE.md`](./docs/LEVEL5_EVIDENCE.md) |
 | **CI/CD Pipeline File & Badge** | ✅ **VERIFIED** | [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) (Passing runs on `main`) |
 | **Full Technical Documentation** | ✅ **VERIFIED** | Setup, Installation, Docker Proof Server & Usage Guides below |
 | **Demo Video of MVP** | ✅ **VERIFIED** | [Watch MVP Walkthrough Video](https://youtube.com/watch?v=AssetBridgeDemo) |
@@ -116,6 +119,8 @@ Public blockchain ledgers reveal full wallet balances, transaction histories, an
 
 - **Live Preprod DApp:** [https://thanchanb.github.io/AssetBridge/](https://thanchanb.github.io/AssetBridge/)
 - **Product X Profile:** [https://x.com/AssetBridgeZK](https://x.com/AssetBridgeZK) (`@AssetBridgeZK` — Official Product Account)
+- **Official Brand Assets:** [`brand/`](./brand/) (Avatar, Banner, Launch Cards, Vector SVG)
+- **Level 4 Revision Evidence:** [`docs/LEVEL4_SUBMISSION_REVISION.md`](./docs/LEVEL4_SUBMISSION_REVISION.md)
 - **GitHub Repository:** [https://github.com/thanchanb/AssetBridge](https://github.com/thanchanb/AssetBridge)
 - **Demo Video:** [Watch MVP Walkthrough](https://youtube.com/watch?v=AssetBridgeDemo)
 - **CI/CD Pipeline:** [`.github/workflows/ci.yml`](./.github/workflows/ci.yml)

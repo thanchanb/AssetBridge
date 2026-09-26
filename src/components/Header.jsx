@@ -28,6 +28,7 @@ const Header = () => {
         <a href="#bridge">Bridge</a>
         <a href="#how">How it works</a>
         <a href="#feedback">Feedback</a>
+        <a href="https://x.com/AssetBridgeZK" target="_blank" rel="noopener noreferrer" title="Official AssetBridge X Profile (@AssetBridgeZK)">Product X</a>
         <a href="https://github.com/thanchanb/AssetBridge#readme" target="_blank" rel="noopener noreferrer">Docs</a>
       </div>
 
