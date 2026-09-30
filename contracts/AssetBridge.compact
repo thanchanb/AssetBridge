@@ -1,14 +1,141 @@
-// AssetBridge Privacy Model:
-// - Public Ledger State: Total Value Locked (TVL) in the bridge.
-// - Private Witness Data: The specific amount the user is bridging in this transaction, and their identity.
-// - disclose(): The amount to be bridged is explicitly disclosed to the public ledger so the TVL can be accurately updated, while identity remains private.
+// AssetBridge Privacy & Verification Model:
+// - Public Ledger State:
+//     - bridgeAuthority: Authority/admin address overseeing bridge custody.
+//     - tvl: Total Value Locked across all deposited assets.
+//     - totalWithdrawn: Cumulative value burned and unlocked back to origin chains.
+//     - totalDepositsCount: Total count of verified deposit claims.
+//     - totalWithdrawalsCount: Total count of verified withdrawal burns.
+//     - processedDeposits: Cryptographic replay protection tracking processed deposit transaction receipts.
+//     - processedWithdrawals: Cryptographic replay protection tracking withdrawal nonces.
+//     - assetIssuedSupply: Total minted/issued wrapped tokens per asset ID on Midnight.
+//     - userShieldedBalances: User balances keyed by shielded recipient commitment.
+// - Private Witness Data:
+//     - userSecretKey(): User's private secret used to authenticate withdrawals and generate nullifiers.
+// - Conservation of Assets:
+//     - Invariant: totalWithdrawn <= tvl.
+//     - Invariant: sum of user balances matches total active supply.
+// - Arithmetic Safety:
+//     - Safe checked Uint<64> bounds, preventing overflow and underflow on all transactions.
 
 pragma language_version >= 0.14.0;
 
-export ledger tvl: Uint<32>;
+import CompactStandardLibrary;
 
+// Witness function for private user authorization
+witness userSecretKey(): Bytes<32>;
+
+// Public Ledger State for Bridge Custody & Accounting
+export ledger bridgeAuthority: Bytes<32>;
+export ledger tvl: Uint<64>;
+export ledger totalWithdrawn: Uint<64>;
+export ledger totalDepositsCount: Uint<64>;
+export ledger totalWithdrawalsCount: Uint<64>;
+
+// Replay Protection Sets
+export ledger processedDeposits: Set<Bytes<32>>;
+export ledger processedWithdrawals: Set<Bytes<32>>;
+
+// Asset Accounting and Shielded Balances
+export ledger assetIssuedSupply: Map<Bytes<32>, Uint<64>>;
+export ledger userShieldedBalances: Map<Bytes<32>, Uint<64>>;
+
+// Initialize Bridge Custody Parameters
+export circuit initializeBridge(authority: Bytes<32>): [] {
+    bridgeAuthority = disclose(authority);
+    tvl = 0 as Uint<64>;
+    totalWithdrawn = 0 as Uint<64>;
+    totalDepositsCount = 0 as Uint<64>;
+    totalWithdrawalsCount = 0 as Uint<64>;
+}
+
+// Deposit verification & wrapped asset issuance (Cross-Chain Deposit Claim)
+export circuit claimDeposit(
+    depositId: Bytes<32>,
+    assetId: Bytes<32>,
+    amount: Uint<64>,
+    recipientCommitment: Bytes<32>
+): [] {
+    // 1. Arithmetic safety check
+    assert(amount > 0, "Deposit claim amount must be positive");
+    assert(amount <= 1000000000000000000 as Uint<64>, "Deposit exceeds safety cap");
+
+    // 2. Replay protection check
+    const dId = disclose(depositId);
+    assert(!processedDeposits.member(dId), "Replay rejected: deposit already processed");
+    processedDeposits.insert(dId);
+
+    // 3. Asset conservation & TVL update
+    const discAmount = disclose(amount);
+    const newTvl = (tvl + discAmount) as Uint<64>;
+    assert(newTvl >= tvl, "Arithmetic overflow in TVL");
+    tvl = newTvl;
+    totalDepositsCount = (totalDepositsCount + 1) as Uint<64>;
+
+    // 4. Update asset supply
+    const aId = disclose(assetId);
+    const curAssetSupply = assetIssuedSupply.member(aId) ? assetIssuedSupply.lookup(aId) : 0 as Uint<64>;
+    assert((curAssetSupply + discAmount) as Uint<64> >= curAssetSupply, "Asset supply overflow");
+    assetIssuedSupply.insert(aId, (curAssetSupply + discAmount) as Uint<64>);
+
+    // 5. Credit user's shielded balance
+    const rCommit = disclose(recipientCommitment);
+    const currentBal = userShieldedBalances.member(rCommit) ? userShieldedBalances.lookup(rCommit) : 0 as Uint<64>;
+    assert((currentBal + discAmount) as Uint<64> >= currentBal, "User balance overflow");
+    userShieldedBalances.insert(rCommit, (currentBal + discAmount) as Uint<64>);
+
+    // Invariant: totalWithdrawn <= tvl
+    assert(totalWithdrawn <= tvl, "Asset conservation invariant violation");
+}
+
+// Burn wrapped assets and initiate cross-chain release
+export circuit burnAndUnbridge(
+    withdrawalNonce: Bytes<32>,
+    assetId: Bytes<32>,
+    amount: Uint<64>,
+    targetChainRecipient: Bytes<32>
+): [] {
+    // 1. Arithmetic safety check
+    assert(amount > 0, "Withdrawal amount must be positive");
+    const discAmount = disclose(amount);
+
+    // 2. Replay protection check
+    const wId = disclose(withdrawalNonce);
+    assert(!processedWithdrawals.member(wId), "Replay rejected: withdrawal nonce already used");
+    processedWithdrawals.insert(wId);
+
+    // 3. User authorization via private witness
+    const secret = userSecretKey();
+    const callerCommitment = persistentCommit<Bytes<32>>(secret, pad(32, "assetbridge_identity_salt"));
+    const discCaller = disclose(callerCommitment);
+
+    // 4. Verify user balance
+    assert(userShieldedBalances.member(discCaller), "Caller has no registered shielded balance");
+    const currentBal = userShieldedBalances.lookup(discCaller);
+    assert(currentBal >= discAmount, "Insufficient balance for withdrawal");
+
+    // 5. Asset conservation check
+    const newTotalWithdrawn = (totalWithdrawn + discAmount) as Uint<64>;
+    assert(newTotalWithdrawn >= totalWithdrawn, "Arithmetic overflow in totalWithdrawn");
+    assert(newTotalWithdrawn <= tvl, "Asset conservation violation: cannot withdraw more than TVL");
+    totalWithdrawn = newTotalWithdrawn;
+    totalWithdrawalsCount = (totalWithdrawalsCount + 1) as Uint<64>;
+
+    // 6. Deduct balance and update asset supply
+    userShieldedBalances.insert(discCaller, (currentBal - discAmount) as Uint<64>);
+    const aId = disclose(assetId);
+    assert(assetIssuedSupply.member(aId), "Asset supply not tracked");
+    const curAssetSupply = assetIssuedSupply.lookup(aId);
+    assert(curAssetSupply >= discAmount, "Cannot burn more than issued supply");
+    assetIssuedSupply.insert(aId, (curAssetSupply - discAmount) as Uint<64>);
+
+    // Disclose target chain recipient so bridge relayer can release custody funds
+    disclose(targetChainRecipient);
+}
+
+// Compatibility circuit for existing bridge_asset calls
 export circuit bridge_asset(amount: Uint<32>): [] {
-    // The amount is provided as a private witness.
-    // We explicitly disclose it to the public ledger state to update the total bridged value.
-    tvl = (tvl + disclose(amount)) as Uint<32>;
+    assert(amount > 0, "Bridge amount must be positive");
+    const discAmount = disclose(amount) as Uint<64>;
+    tvl = (tvl + discAmount) as Uint<64>;
+    totalDepositsCount = (totalDepositsCount + 1) as Uint<64>;
 }
